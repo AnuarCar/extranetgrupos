@@ -1,0 +1,82 @@
+<nz-layout class="app-layout">
+  <nz-sider class="menu-sidebar"
+            nzCollapsible
+            nzWidth="256px"
+            nzBreakpoint="md"
+            [(nzCollapsed)]="isCollapsed"
+            [nzTrigger]="null">
+    <div class="sidebar-logo">
+      <a href="https://www.grupos.co/" target="_blank">
+        <img src="https://www.grupos.co/Images/Logo-10.svg" alt="logo">
+        <h1>Extranet Grupos.co</h1>
+      </a>
+    </div>
+    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-submenu nzOpen nzTitle="Home" nzIcon="home">
+        <ul>
+          <li nz-menu-item nzMatchRouter class="trigger:hover">
+            <a routerLink="/welcome">Perfil</a>
+          </li>
+          <li nz-menu-item nzMatchRouter class="trigger:hover">
+            <a [routerLink]="['/preferencias']" >Preferencias</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Proveedores" nzIcon="team">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a [routerLink]="['/proveedores']" >Tipo Proveedor</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Contratos" nzIcon="book">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a>Tipo negociación</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Habitaciones" nzIcon="group">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a>Tipo habitación</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a>Tipo de cama</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Allotment" nzIcon="calendar">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a>Registro</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Tarifas" nzIcon="file">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a>Registro</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <div class="app-header">
+        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+            <i class="trigger"
+               nz-icon
+               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+            ></i>
+        </span>
+      </div>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
