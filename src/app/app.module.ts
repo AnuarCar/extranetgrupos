@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: 'proveedores', component: ProveedoresComponent },
   { path: '', component: PreferenciasComponent, pathMatch: 'full' },
   //El '/' se puede camboas por el nombre de la carpeta, por ejemplo para re-dirigir a una pagina 404
+  //Comment
   { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
 
