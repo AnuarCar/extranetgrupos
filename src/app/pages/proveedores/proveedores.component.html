@@ -1,1 +1,26 @@
-<p>proveedores works!</p>
+<div style="min-width: 100%;min-height: 200%;">
+    <div class="container" style="max-width: 600px;background-color: white;">
+    <h2 class="textual">Registro de proveedor</h2>
+    <div class="form-group">
+        <h4 class="textual">Información básica</h4>
+    </div>
+    <form #RegisterfromProveedor="ngForm" (ngSubmit)="registerProveedor">
+        
+        <!--ID field-->
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" name="idProveedor">
+        </div>
+
+        <!--ID field-->
+        <div class="form-group">
+            <label for="id">Tipo proveedor</label>
+            <input type="select" class="form-control" name="tipoProveedor">
+        </div>
+
+
+
+    </form>
+    
+    </div>
+</div>
