@@ -11,7 +11,7 @@ import { NgForm } from '@angular/forms';
 })
 export class ProveedoresComponent implements OnInit {
 
-  prov = new Proveedor();
+  public prov = new Proveedor();
   msg = '';
 
   constructor(private provedorServ : ProveedorService, private _router : Router) { }
