@@ -16,6 +16,7 @@ import { registerLocaleData } from '@angular/common';
 import es from '@angular/common/locales/es';
 import { PreferenciasComponent } from './pages/preferencias/preferencias.component';
 import { ProveedoresComponent } from './pages/proveedores/proveedores.component';
+import { ProveedorService } from './service/proveedor.service';
 
 
 registerLocaleData(es);
@@ -47,7 +48,9 @@ const routes: Routes = [
     BrowserAnimationsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [{ provide: NZ_I18N, useValue: es_ES }],
+  providers: [
+    ProveedorService,
+    { provide: NZ_I18N, useValue: es_ES }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

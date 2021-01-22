@@ -4,7 +4,7 @@ export class Proveedor {
     cadena:String;
     nombre:String;
     checkin:Date;
-    checout:Date;
+    checkout:Date;
     estrellas:Number;
     pais:String;
     ciudad:String;

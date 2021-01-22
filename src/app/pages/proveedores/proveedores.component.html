@@ -1,37 +1,183 @@
-<div style="min-width: 100%;min-height: 200%;">
-    <div class="app-header" style="max-width: 600px;background-color: white;">
-    <h2 class="textual">Registro de proveedor</h2>
-    <div class="form-group">
-        <h4 class="textual">Información básica</h4>
-    </div>
-    <form>
-        
-        <!--ID field-->
-        <div class="form-group">
-            <label for="id">ID</label>
-            <input type="text" class="form-control" name="idProveedor">
+<div>
+    <div>
+        <h2>Registro de proveedor</h2>
+        <div>
+            <h4 class="textual">Información básica</h4>
         </div>
+        <form #Registerform="ngForm" (ngSubmit)="registerProveedor()">
+            
+            <!--ID field-->
+            <div>
+                <label>ID</label>
+                <input type="text" [(NgModel)]="prov.idProveedor">
+            </div>
 
-        <!--ID field-->
-        <div class="form-group">
-            <label for="id">Tipo proveedor</label>
-            <input type="select" class="form-control" name="tipoProveedor">
-        </div>
+            <!--Tipo proveedor field-->
+            <div>
+                <label>Tipo proveedor</label>
+                <input type="text" [(NgModel)]="prov.tipoProveedor">
+            </div>
+
+             <!--Cadena field-->
+             <div>
+                <label>Cadena</label>
+                <input type="text" [(NgModel)]="prov.cadena">
+            </div>
+
+             <!--Nombre field-->
+             <div>
+                <label>Nombre proveedor</label>
+                <input type="text" [(NgModel)]="prov.nombre">
+            </div>
+
+             <!--Check-in field-->
+             <div>
+                <label>Check-in</label>
+                <input type="text" [(NgModel)]="prov.checkin">
+            </div>
+
+             <!--Check-out field-->
+             <div>
+                <label>Check-out</label>
+                <input type="text" [(NgModel)]="prov.checkout">
+            </div>
+
+             <!--Estrellas field-->
+             <div>
+                <label>Estrellas</label>
+                <input type="text" [(NgModel)]="prov.estrellas">
+            </div>
+
+             <!--País field-->
+             <div>
+                <label>País</label>
+                <input type="text" [(NgModel)]="prov.pais">
+            </div>
+
+             <!--Ciudad field-->
+             <div>
+                <label>Ciudad</label>
+                <input type="text" [(NgModel)]="prov.ciudad">
+            </div>
+
+             <!--Dirección field-->
+             <div>
+                <label>Dirección</label>
+                <input type="text" [(NgModel)]="prov.direccion">
+            </div>
+
+             <!--Teléfono field-->
+             <div>
+                <label>Teléfono</label>
+                <input type="text" [(NgModel)]="prov.telefono">
+            </div>
+
+             <!--Descripción field-->
+             <div>
+                <label>Descripción</label>
+                <input type="text" [(NgModel)]="prov.descripcionHotel">
+            </div>
+
+             <!--NombreGeranteGeneral field-->
+             <div>
+                <label>Nombre Gerente General</label>
+                <input type="text" [(NgModel)]="prov.nombreGerenteGeneral">
+            </div>
+
+             <!--EmailGerenteGeneral field-->
+             <div>
+                <label>Email Gerente General</label>
+                <input type="text" [(NgModel)]="prov.emailGerenteGeneral">
+            </div>
+
+             <!--NotificarGerenteGeneral field-->
+             <div>
+                <label>Notificar Gerente General</label>
+                <input type="text" [(NgModel)]="prov.notificarGerenteGeneral">
+            </div>
+
+             <!--TeléfonoGerenteGeneral field-->
+             <div>
+                <label>Teléfono Gerente General</label>
+                <input type="text" [(NgModel)]="prov.telefonoGerenteGeneral">
+            </div>
+
+             <!--NombreGerenteComercial field-->
+             <div>
+                <label>Nombre Gerente Comercial</label>
+                <input type="text" [(NgModel)]="prov.nombreGerenteComercial">
+            </div>
+
+             <!--EmailGerenteComercial field-->
+             <div>
+                <label>Email Gerente Comercial</label>
+                <input type="text" [(NgModel)]="prov.emailGerenteComercial">
+            </div>
+
+             <!--NotificarGerenteComercial field-->
+             <div>
+                <label>Notificar Gerente Comercial</label>
+                <input type="text" [(NgModel)]="prov.notificarGerenteComerial">
+            </div>
+
+             <!--TeléfonoGerenteComercial field-->
+             <div>
+                <label>Teléfono Gerente Comercial</label>
+                <input type="text" [(NgModel)]="prov.telefonoGerenteComercial">
+            </div>
+
+             <!--NombreContactoReservas field-->
+             <div>
+                <label>Nombre Contacto Reservas</label>
+                <input type="text" [(NgModel)]="prov.nombreContactoReservas">
+            </div>
+
+             <!--EmailContactoReservas field-->
+             <div>
+                <label>Email Contacto Reservas</label>
+                <input type="text" [(NgModel)]="prov.emailContactoReservas">
+            </div>
+
+             <!--NotificarContactoReservas field-->
+             <div>
+                <label>Notificar Contacto Reservas</label>
+                <input type="text" [(NgModel)]="prov.notificarContactoReservas">
+            </div>
+
+             <!--TeléfonoContactoReservas field-->
+             <div>
+                <label>Teléfono Contacto Reservas</label>
+                <input type="text" [(NgModel)]="prov.telefonoContactoReservas">
+            </div>
+
+             <!--NombreContactoGrupos field-->
+             <div>
+                <label>Nombre Contacto Grupos</label>
+                <input type="text" [(NgModel)]="prov.nombreContactoGrupos">
+            </div>
+
+             <!--EmailContactoGrupos field-->
+             <div>
+                <label>Email Contacto Grupos</label>
+                <input type="text" [(NgModel)]="prov.emailContactoGrupos">
+            </div>
+
+             <!--NotificarContactoGrupos field-->
+             <div>
+                <label>NotificarContactoGrupos</label>
+                <input type="text" [(NgModel)]="prov.notificarContactoGrupos">
+            </div>
+
+             <!--TeléfonoContactoGrupos field-->
+             <div>
+                <label>Teléfono Contacto Grupos</label>
+                <input type="text" [(NgModel)]="prov.telefonoContactoGrupos">
+            </div>
 
 
+            <button type="submit">Save</button>
 
-    </form>
 
-
-    <form nz-form>
-        
-        
-        
-            <input nz-input name="email" type="email" id="email">
-            <input nz-input placeholder="Basic usage"/>
-        
-        
-      </form>
-    
+        </form>
     </div>
 </div>
