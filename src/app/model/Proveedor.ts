@@ -1,6 +1,9 @@
+import { Tipoproveedor } from '../model/Tipoproveedor';
+
 export class Proveedor {
+
     idProveedor:Number;
-    tipoProveedor:String;
+    tipoProveedor:Number = Tipoproveedor.idtipoProveedor;
     cadena:String;
     nombre:String;
     checkin:Date;
