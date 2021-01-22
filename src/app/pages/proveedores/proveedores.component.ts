@@ -27,8 +27,7 @@ export class ProveedoresComponent implements OnInit {
       }  ,
 
       error => {
-        console.log("error");
-        console.log("data");
+        console.log(error);
         this.msg = error.error;
       }
 
