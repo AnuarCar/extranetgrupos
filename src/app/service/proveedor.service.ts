@@ -15,8 +15,7 @@ export class ProveedorService {
   constructor(private httpObj: HttpClient) { }
 
   public registrarProveedor(prov: Proveedor):Observable<any> {
-    return this.httpObj.post<any>("https://inventarioextranet.herokuapp.com/proveedores", JSON.stringify(prov));
-
+    return this.httpObj.post<any>("https://inventarioextranet.herokuapp.com/proveedores",prov);
   }
 
 }
