@@ -1,3 +1,3 @@
-export const Tipoproveedor = {
-    idtipoProveedor:1
+export class Tipoproveedor {
+    idtipoProveedor:Number=1;
 }
