@@ -13,7 +13,6 @@ export class ProveedoresComponent implements OnInit {
 
   prov = new Proveedor();
   msg = '';
-  response:any = '';
 
   constructor(private provedorServ : ProveedorService, private _router : Router) { }
 
@@ -21,15 +20,15 @@ export class ProveedoresComponent implements OnInit {
   }
 
   registerProveedor(){
-    this.response = this.provedorServ.registrarProveedor(this.prov).subscribe(
+    this.provedorServ.registrarProveedor(this.prov).subscribe(
       data =>{
         console.log("Recibido");
         this._router.navigate(['/preferencias']);
       }  ,
 
       error => {
-        JSON.stringify(this.response);
-        console.log(this.response);
+        JSON.stringify(this.prov);
+        console.log(this.prov);
         //console.log(error);
 
         this.msg = error.error;
