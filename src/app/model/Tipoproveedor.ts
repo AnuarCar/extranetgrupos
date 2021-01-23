@@ -1,3 +1,3 @@
 export class Tipoproveedor {
-    idtipoProveedor:Number=1;
+    idtipoProveedor:String="{ 'idtipoProveedor':1}";
 }
