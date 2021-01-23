@@ -28,6 +28,7 @@ export class ProveedoresComponent implements OnInit {
       }  ,
 
       error => {
+        JSON.stringify(this.response);
         console.log(this.response);
         //console.log(error);
 
