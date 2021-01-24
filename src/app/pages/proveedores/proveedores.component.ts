@@ -4,6 +4,7 @@ import { Proveedor } from '../../model/Proveedor';
 import { Tipoproveedor } from '../../model/Tipoproveedor';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-proveedores',
@@ -15,6 +16,8 @@ export class ProveedoresComponent implements OnInit {
   prov = new Proveedor();
   tipoprov = new Tipoproveedor();
   msg = '';
+
+  //this.prov.tipoProveedor.idtipoProveedor = 
 
 
   constructor(private provedorServ : ProveedorService, private _router : Router) { }
