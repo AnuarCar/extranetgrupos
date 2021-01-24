@@ -27,34 +27,34 @@ export class ProveedoresComponent implements OnInit {
 
   ngOnInit(): void {
     this.ProveedorForm = this.formBuilder.group({
-      idProv:[''],
-      idtipoProv:[''],  
-      cadenaProv:[''],
-      nombreProv:[''],
-      checkinProv:[''],
-      checkoutProv:[''],
-      estrellasProv:[''],
-      paisProv:[''],
-      CiudadProv:[''],
-      direccionProv:[''],
-      telefonoProv:[''],
-      descripcionProv:[''],
-      nombreggeneralProv:[''],
-      emailggeneralProv:[''],
-      notificarggeneralProv:[''],
-      telefonoggeneralProv:[''],
-      nombregcomercialProv:[''],
-      emailgcomercialProv:[''],
-      notificargcomercialProv:[''],
-      telefonogcomercialProv:[''],
-      nombrecreservasProv:[''],
-      emailcreservasProv:[''],
-      notificarcreservasProv:[''],
-      telefonocreservasProv:[''],
-      nombrecgruposProv:[''],
-      emailcgruposProv:[''],
-      notificarcgruposProv:[''],
-      telefonocgruposProv:[''],
+      idProv:['', Validators.required],
+      idtipoProv:['', Validators.required],  
+      cadenaProv:['', Validators.required],
+      nombreProv:['', Validators.required],
+      checkinProv:['', Validators.required],
+      checkoutProv:['', Validators.required],
+      estrellasProv:['', Validators.required],
+      paisProv:['', Validators.required],
+      CiudadProv:['', Validators.required],
+      direccionProv:['', Validators.required],
+      telefonoProv:['', Validators.required],
+      descripcionProv:['', Validators.required],
+      nombreggeneralProv:['', Validators.required],
+      emailggeneralProv:['', Validators.required], 
+      notificarggeneralProv:['', Validators.required],
+      telefonoggeneralProv:['', Validators.required],
+      nombregcomercialProv:['', Validators.required],
+      emailgcomercialProv:['', Validators.required],
+      notificargcomercialProv:['', Validators.required],
+      telefonogcomercialProv:['', Validators.required],
+      nombrecreservasProv:['', Validators.required],
+      emailcreservasProv:['', Validators.required],
+      notificarcreservasProv:['', Validators.required],
+      telefonocreservasProv:['', Validators.required],
+      nombrecgruposProv:['', Validators.required],
+      emailcgruposProv:['', Validators.required],
+      notificarcgruposProv:['', Validators.required],
+      telefonocgruposProv:['', Validators.required],
 
     })
 
@@ -66,7 +66,7 @@ export class ProveedoresComponent implements OnInit {
   onSubmit(){
 
     this.submitted = true;
-    if (this.ProveedorForm.invalid){
+    if (this.ProveedorForm.invalid) {
       return;
     }
 
