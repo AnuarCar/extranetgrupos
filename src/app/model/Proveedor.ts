@@ -3,7 +3,7 @@ import { Tipoproveedor } from '../model/Tipoproveedor';
 export class Proveedor {
 
     idProveedor:Number;
-    tipoProveedor:Tipoproveedor[];
+    tipoProveedor:Tipoproveedor;
     cadena:String;
     nombre:String;
     checkin:Date;

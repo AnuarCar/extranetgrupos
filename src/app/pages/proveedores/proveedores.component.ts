@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProveedorService } from '../../service/proveedor.service';
 import { Proveedor } from '../../model/Proveedor';
+import { Tipoproveedor } from '../../model/Tipoproveedor';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
@@ -12,7 +13,9 @@ import { NgForm } from '@angular/forms';
 export class ProveedoresComponent implements OnInit {
 
   prov = new Proveedor();
+  tipoprov = new Tipoproveedor();
   msg = '';
+
 
   constructor(private provedorServ : ProveedorService, private _router : Router) { }
 
