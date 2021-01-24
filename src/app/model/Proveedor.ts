@@ -2,7 +2,7 @@ export class Proveedor {
 
     idProveedor:Number;
     tipoProveedor:{
-        idtipoProveedor:Number;
+        idtipoProveedor?:Number;
     }
     cadena:String;
     nombre:String;

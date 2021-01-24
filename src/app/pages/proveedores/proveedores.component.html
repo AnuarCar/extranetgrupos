@@ -4,174 +4,174 @@
         <div>
             <h4 class="textual">Información básica</h4>
         </div>
-        <form #Registerform="ngForm" (ngSubmit)="registerProveedor()">
+        <form [formGroup]="ProveedorForm" (ngSubmit)="onSubmit()">
             
             <!--ID field-->
             <div>
                 <label>ID</label>
-                <input type="text" [(ngModel)]="prov.idProveedor">
+                <input type="text" formControlName="idProv" [(ngModel)]="prov.idProveedor">
             </div>
 
             <!--Tipo proveedor field-->
             <div>
                 <label>Tipo proveedor</label>
-                <input type="text" [(ngModel)]="prov.tipoProveedor.idtipoProveedor">
+                <input type="text" formControlName="idtipoProv" [(ngModel)]="prov.tipoProveedor.idtipoProveedor">
             </div>
 
              <!--Cadena field-->
              <div>
                 <label>Cadena</label>
-                <input type="text" [(ngModel)]="prov.cadena">
+                <input type="text" formControlName="cadenaProv" [(ngModel)]="prov.cadena">
             </div>
 
              <!--Nombre field-->
              <div>
                 <label>Nombre proveedor</label>
-                <input type="text" [(ngModel)]="prov.nombre">
+                <input type="text" formControlName="nombreProv" [(ngModel)]="prov.nombre">
             </div>
 
              <!--Check-in field-->
              <div>
                 <label>Check-in</label>
-                <input type="text" [(ngModel)]="prov.checkin">
+                <input type="text" formControlName="checkinProv" [(ngModel)]="prov.checkin">
             </div>
 
              <!--Check-out field-->
              <div>
                 <label>Check-out</label>
-                <input type="text" [(ngModel)]="prov.checkout">
+                <input type="text" formControlName="checkoutProv" [(ngModel)]="prov.checkout">
             </div>
 
              <!--Estrellas field-->
              <div>
                 <label>Estrellas</label>
-                <input type="text" [(ngModel)]="prov.estrellas">
+                <input type="text" formControlName="estrellasProv" [(ngModel)]="prov.estrellas">
             </div>
 
              <!--País field-->
              <div>
                 <label>País</label>
-                <input type="text" [(ngModel)]="prov.pais">
+                <input type="text" formControlName="paisProv" [(ngModel)]="prov.pais">
             </div>
 
              <!--Ciudad field-->
              <div>
                 <label>Ciudad</label>
-                <input type="text" [(ngModel)]="prov.ciudad">
+                <input type="text" formControlName="CiudadProv" [(ngModel)]="prov.ciudad">
             </div>
 
              <!--Dirección field-->
              <div>
                 <label>Dirección</label>
-                <input type="text" [(ngModel)]="prov.direccion">
+                <input type="text" formControlName="direccionProv" [(ngModel)]="prov.direccion">
             </div>
 
              <!--Teléfono field-->
              <div>
                 <label>Teléfono</label>
-                <input type="text" [(ngModel)]="prov.telefono">
+                <input type="text" formControlName="telefonoProv" [(ngModel)]="prov.telefono">
             </div>
 
              <!--Descripción field-->
              <div>
                 <label>Descripción</label>
-                <input type="text" [(ngModel)]="prov.descripcionHotel">
+                <input type="text" formControlName="descripcionProv" [(ngModel)]="prov.descripcionHotel">
             </div>
 
              <!--NombreGeranteGeneral field-->
              <div>
                 <label>Nombre Gerente General</label>
-                <input type="text" [(ngModel)]="prov.nombreGerenteGeneral">
+                <input type="text" formControlName="nombreggeneralProv"[(ngModel)]="prov.nombreGerenteGeneral">
             </div>
 
              <!--EmailGerenteGeneral field-->
              <div>
                 <label>Email Gerente General</label>
-                <input type="text" [(ngModel)]="prov.emailGerenteGeneral">
+                <input type="text" formControlName="emailggeneralProv" [(ngModel)]="prov.emailGerenteGeneral">
             </div>
 
              <!--NotificarGerenteGeneral field-->
              <div>
                 <label>Notificar Gerente General</label>
-                <input type="text" [(ngModel)]="prov.notificarGerenteGeneral">
+                <input type="text" formControlName="notificarggeneralProv" [(ngModel)]="prov.notificarGerenteGeneral">
             </div>
 
              <!--TeléfonoGerenteGeneral field-->
              <div>
                 <label>Teléfono Gerente General</label>
-                <input type="text" [(ngModel)]="prov.telefonoGerenteGeneral">
+                <input type="text" formControlName="telefonoggeneralProv" [(ngModel)]="prov.telefonoGerenteGeneral">
             </div>
 
              <!--NombreGerenteComercial field-->
              <div>
                 <label>Nombre Gerente Comercial</label>
-                <input type="text" [(ngModel)]="prov.nombreGerenteComercial">
+                <input type="text" formControlName="nombregcomercialProv" [(ngModel)]="prov.nombreGerenteComercial">
             </div>
 
              <!--EmailGerenteComercial field-->
              <div>
                 <label>Email Gerente Comercial</label>
-                <input type="text" [(ngModel)]="prov.emailGerenteComercial">
+                <input type="text" formControlName="emailgcomercialProv" [(ngModel)]="prov.emailGerenteComercial">
             </div>
 
              <!--NotificarGerenteComercial field-->
              <div>
                 <label>Notificar Gerente Comercial</label>
-                <input type="text" [(ngModel)]="prov.notificarGerenteComerial">
+                <input type="text" formControlName="notificargcomercialProv" [(ngModel)]="prov.notificarGerenteComerial">
             </div>
 
              <!--TeléfonoGerenteComercial field-->
              <div>
                 <label>Teléfono Gerente Comercial</label>
-                <input type="text" [(ngModel)]="prov.telefonoGerenteComercial">
+                <input type="text" formControlName="telefonogcomercialProv" [(ngModel)]="prov.telefonoGerenteComercial">
             </div>
 
              <!--NombreContactoReservas field-->
              <div>
                 <label>Nombre Contacto Reservas</label>
-                <input type="text" [(ngModel)]="prov.nombreContactoReservas">
+                <input type="text" formControlName="nombrecreservasProv" [(ngModel)]="prov.nombreContactoReservas">
             </div>
 
              <!--EmailContactoReservas field-->
              <div>
                 <label>Email Contacto Reservas</label>
-                <input type="text" [(ngModel)]="prov.emailContactoReservas">
+                <input type="text" formControlName="emailcreservasProv" [(ngModel)]="prov.emailContactoReservas">
             </div>
 
              <!--NotificarContactoReservas field-->
              <div>
                 <label>Notificar Contacto Reservas</label>
-                <input type="text" [(ngModel)]="prov.notificarContactoReservas">
+                <input type="text" formControlName="notificarcreservasProv" [(ngModel)]="prov.notificarContactoReservas">
             </div>
 
              <!--TeléfonoContactoReservas field-->
              <div>
                 <label>Teléfono Contacto Reservas</label>
-                <input type="text" [(ngModel)]="prov.telefonoContactoReservas">
+                <input type="text" formControlName="telefonocreservasProv" [(ngModel)]="prov.telefonoContactoReservas">
             </div>
 
              <!--NombreContactoGrupos field-->
              <div>
                 <label>Nombre Contacto Grupos</label>
-                <input type="text" [(ngModel)]="prov.nombreContactoGrupos">
+                <input type="text" formControlName="nombrecgruposProv" [(ngModel)]="prov.nombreContactoGrupos">
             </div>
 
              <!--EmailContactoGrupos field-->
              <div>
                 <label>Email Contacto Grupos</label>
-                <input type="text" [(ngModel)]="prov.emailContactoGrupos">
+                <input type="text" formControlName="emailcgruposProv" [(ngModel)]="prov.emailContactoGrupos">
             </div>
 
              <!--NotificarContactoGrupos field-->
              <div>
                 <label>NotificarContactoGrupos</label>
-                <input type="text" [(ngModel)]="prov.notificarContactoGrupos">
+                <input type="text" formControlName="notificarcgruposProv" [(ngModel)]="prov.notificarContactoGrupos">
             </div>
 
              <!--TeléfonoContactoGrupos field-->
              <div>
                 <label>Teléfono Contacto Grupos</label>
-                <input type="text" [(ngModel)]="prov.telefonoContactoGrupos">
+                <input type="text" formControlName="telefonocgruposProv" [(ngModel)]="prov.telefonoContactoGrupos">
             </div>
 
 
