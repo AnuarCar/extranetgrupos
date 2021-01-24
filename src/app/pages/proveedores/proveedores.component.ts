@@ -110,7 +110,7 @@ export class ProveedoresComponent implements OnInit {
       error => {
         JSON.stringify(this.prov);
         console.log(this.prov);
-        //console.log(error);
+        console.log(error);
 
         this.msg = error.error;
       }
