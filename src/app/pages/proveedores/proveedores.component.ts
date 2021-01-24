@@ -14,6 +14,7 @@ import { FormGroup } from '@angular/forms';
 export class ProveedoresComponent implements OnInit {
 
   prov = new Proveedor();
+  
   tipoprov = new Tipoproveedor();
   msg = '';
 

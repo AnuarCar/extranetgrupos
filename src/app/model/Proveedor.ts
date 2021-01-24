@@ -1,5 +1,3 @@
-import { Tipoproveedor } from '../model/Tipoproveedor';
-
 export class Proveedor {
 
     idProveedor:Number;
