@@ -1,6 +1,6 @@
 export class Proveedor {
 
-    idProveedor:Number;
+    idproveedor:Number;
     tipoProveedor:{
         idtipoProveedor?:Number;
     }
