@@ -72,7 +72,7 @@ export class ProveedoresComponent implements OnInit {
 
     this.loading = true;
     debugger
-    this.prov.idProveedor=this.f.idProv.value;
+    this.prov.idproveedor=this.f.idProv.value;
     this.prov.tipoProveedor.idtipoProveedor=this.f.idtipoProv.value;
     this.prov.cadena=this.f.cadenaProv.value;
     this.prov.nombre=this.f.nombreProv.value;
