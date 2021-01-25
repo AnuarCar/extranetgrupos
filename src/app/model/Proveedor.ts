@@ -6,8 +6,8 @@ export class Proveedor {
     }
     cadena:String;
     nombre:String;
-    checkin:Date;
-    checkout:Date;
+    checkin:String;
+    checkout:String;
     estrellas:Number;
     pais:String;
     ciudad:String;

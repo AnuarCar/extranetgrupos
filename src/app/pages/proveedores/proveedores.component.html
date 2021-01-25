@@ -1,187 +1,199 @@
-<div style="min-width: 100%;min-height: 200%;background-color:white">
-    <div class="container" style="max-width: 650px;background-color: white;">
-        <h2 class="textual">Registro de proveedor</h2>
-        <div>
-            <h4 class="textual">Información básica</h4>
-        </div>
+<div>
+    <b><h5 class="textual">Registro de proveedor</h5></b><br>
+    <div class="container" style="max-width: 650px;">
+      
+        <b><h6 class="textual">Información básica</h6></b>
+        
+        <!--Form creation-->
         <form [formGroup]="ProveedorForm" (ngSubmit)="onSubmit()">
             
             <!--ID field-->
             <div class="form-group">
-                <label>ID</label>
-                <input type="text" formControlName="idProv" [(ngModel)]="prov.idproveedor">
+                <label class="form-label">ID</label>
+                <input class="form-control form-control-sm" type="text" formControlName="idProv" [(ngModel)]="prov.idproveedor">
             </div>
 
             <!--Tipo proveedor field-->
             <div class="form-group">
-                <label>Tipo proveedor</label>
-                <input type="text" formControlName="idtipoProv" [(ngModel)]="prov.tipoProveedor.idtipoProveedor">
+                <label class="form-label">Tipo proveedor</label>
+                <select class="form-select form-select-sm" formControlName="idtipoProv" [(ngModel)]="prov.tipoProveedor.idtipoProveedor">
+                    <option value="1">Hotel</option>
+                    <option value="2">Cabaña</option>
+                    <option value="3">Apartamento</option>
+                </select>
             </div>
 
              <!--Cadena field-->
              <div>
-                <label>Cadena</label>
-                <input type="text" formControlName="cadenaProv" [(ngModel)]="prov.cadena">
+                <label class="form-label">Cadena</label>
+                <input class="form-control form-control-sm" type="text" formControlName="cadenaProv" [(ngModel)]="prov.cadena">
             </div>
 
              <!--Nombre field-->
              <div>
-                <label>Nombre proveedor</label>
-                <input type="text" formControlName="nombreProv" [(ngModel)]="prov.nombre">
+                <label class="form-label">Nombre proveedor</label>
+                <input class="form-control form-control-sm" type="text" formControlName="nombreProv" [(ngModel)]="prov.nombre">
             </div>
 
-             <!--Check-in field-->
-             <div>
-                <label>Check-in</label>
-                <input type="text" formControlName="checkinProv" [(ngModel)]="prov.checkin">
-            </div>
-
-             <!--Check-out field-->
-             <div>
-                <label>Check-out</label>
-                <input type="text" formControlName="checkoutProv" [(ngModel)]="prov.checkout">
+             <!--Check-in and check-out fields-->
+             <div class="row">
+                 <div class="col">
+                    <label class="form-label">Check-in</label>
+                    <input class="form-control form-control-sm" type="time" formControlName="checkinProv" [(ngModel)]="prov.checkin">
+                </div>
+                <div class="col">
+                    <label class="form-label">Check-out</label>
+                    <input class="form-control form-control-sm" type="time" formControlName="checkoutProv" [(ngModel)]="prov.checkout">
+                </div>
             </div>
 
              <!--Estrellas field-->
              <div>
-                <label>Estrellas</label>
-                <input type="text" formControlName="estrellasProv" [(ngModel)]="prov.estrellas">
+                <label class="form-label">Estrellas</label>
+                <input class="form-control form-control-sm" type="number" formControlName="estrellasProv" [(ngModel)]="prov.estrellas">
             </div>
 
              <!--País field-->
              <div>
-                <label>País</label>
-                <input type="text" formControlName="paisProv" [(ngModel)]="prov.pais">
+                <label class="form-label">País</label>
+                <input class="form-control form-control-sm" type="text" formControlName="paisProv" [(ngModel)]="prov.pais">
             </div>
 
              <!--Ciudad field-->
              <div>
-                <label>Ciudad</label>
-                <input type="text" formControlName="CiudadProv" [(ngModel)]="prov.ciudad">
+                <label class="form-label">Ciudad</label>
+                <input class="form-control form-control-sm" type="text" formControlName="CiudadProv" [(ngModel)]="prov.ciudad">
             </div>
 
              <!--Dirección field-->
              <div>
-                <label>Dirección</label>
-                <input type="text" formControlName="direccionProv" [(ngModel)]="prov.direccion">
+                <label class="form-label">Dirección</label>
+                <input class="form-control form-control-sm" type="text" formControlName="direccionProv" [(ngModel)]="prov.direccion">
             </div>
 
              <!--Teléfono field-->
              <div>
-                <label>Teléfono</label>
-                <input type="text" formControlName="telefonoProv" [(ngModel)]="prov.telefono">
+                <label class="form-label">Teléfono</label>
+                <input class="form-control form-control-sm" type="text" formControlName="telefonoProv" [(ngModel)]="prov.telefono">
             </div>
 
              <!--Descripción field-->
              <div>
-                <label>Descripción</label>
-                <input type="text" formControlName="descripcionProv" [(ngModel)]="prov.descripcionHotel">
+                <label class="form-label">Descripción</label>
+                <textarea class="form-control form-control-sm" rows="4" formControlName="descripcionProv" [(ngModel)]="prov.descripcionHotel"></textarea>
             </div>
 
+            <!--Sección información de contacto -->
+            <br>
+            <div>
+                <b><h6 class="textual">Información de contacto</h6></b>
+            </div>
+            
              <!--NombreGeranteGeneral field-->
              <div>
-                <label>Nombre Gerente General</label>
-                <input type="text" formControlName="nombreggeneralProv"[(ngModel)]="prov.nombreGerenteGeneral">
+                <label class="form-label">Nombre Gerente General</label>
+                <input class="form-control form-control-sm" type="text" formControlName="nombreggeneralProv"[(ngModel)]="prov.nombreGerenteGeneral">
             </div>
 
-             <!--EmailGerenteGeneral field-->
-             <div>
-                <label>Email Gerente General</label>
-                <input type="text" formControlName="emailggeneralProv" [(ngModel)]="prov.emailGerenteGeneral">
-            </div>
-
-             <!--NotificarGerenteGeneral field-->
-             <div>
-                <label>Notificar Gerente General</label>
-                <input type="text" formControlName="notificarggeneralProv" [(ngModel)]="prov.notificarGerenteGeneral">
-            </div>
-
-             <!--TeléfonoGerenteGeneral field-->
-             <div>
-                <label>Teléfono Gerente General</label>
-                <input type="text" formControlName="telefonoggeneralProv" [(ngModel)]="prov.telefonoGerenteGeneral">
-            </div>
+             <!--EmailGerenteGeneral and NotificarGerenteGeneral and TeléfonoGerenteGeneral fields-->
+             <div class="row">
+                <div class="col">
+                    <label class="form-label">Email</label>
+                    <input class="form-control form-control-sm" type="text" formControlName="emailggeneralProv" [(ngModel)]="prov.emailGerenteGeneral">
+                </div>
+                <div class="col">
+                    <div class="form-check form-switch">
+                        <label class="form-check-label">¿Notificar?</label>
+                        <input class="form-check-input" type="checkbox" formControlName="notificarggeneralProv" [(ngModel)]="prov.notificarGerenteGeneral">
+                    </div>
+                </div>
+                <div class="col">
+                    <label class="form-label">Teléfono Gerente General</label>
+                    <input class="form-control form-control-sm" type="text" formControlName="telefonoggeneralProv" [(ngModel)]="prov.telefonoGerenteGeneral">
+                </div>
+            </div>            
 
              <!--NombreGerenteComercial field-->
              <div>
-                <label>Nombre Gerente Comercial</label>
-                <input type="text" formControlName="nombregcomercialProv" [(ngModel)]="prov.nombreGerenteComercial">
+                <label class="form-label">Nombre Gerente Comercial</label>
+                <input class="form-control form-control-sm" type="text" formControlName="nombregcomercialProv" [(ngModel)]="prov.nombreGerenteComercial">
             </div>
 
-             <!--EmailGerenteComercial field-->
-             <div>
-                <label>Email Gerente Comercial</label>
-                <input type="text" formControlName="emailgcomercialProv" [(ngModel)]="prov.emailGerenteComercial">
-            </div>
-
-             <!--NotificarGerenteComercial field-->
-             <div>
-                <label>Notificar Gerente Comercial</label>
-                <input type="text" formControlName="notificargcomercialProv" [(ngModel)]="prov.notificarGerenteComerial">
-            </div>
-
-             <!--TeléfonoGerenteComercial field-->
-             <div>
-                <label>Teléfono Gerente Comercial</label>
-                <input type="text" formControlName="telefonogcomercialProv" [(ngModel)]="prov.telefonoGerenteComercial">
+             <!--EmailGerenteComercial and NotificarGerenteComercial and TeléfonoGerenteComercial fields-->
+            <div class="row">
+                <div class="col">
+                    <label class="form-label">Email Gerente Comercial</label>
+                    <input class="form-control form-control-sm" type="text" formControlName="emailgcomercialProv" [(ngModel)]="prov.emailGerenteComercial">
+                </div>
+                <div class="col">
+                    <div class="form-check form-switch">
+                        <label class="form-check-label">¿Notificar?</label>
+                        <input class="form-check-input" type="checkbox" formControlName="notificargcomercialProv" [(ngModel)]="prov.notificarGerenteComerial">
+                    </div>
+                </div>
+                <div class="col">
+                    <label class="form-label">Teléfono Gerente Comercial</label>
+                    <input class="form-control form-control-sm" type="text" formControlName="telefonogcomercialProv" [(ngModel)]="prov.telefonoGerenteComercial">
+                </div>
             </div>
 
              <!--NombreContactoReservas field-->
              <div>
-                <label>Nombre Contacto Reservas</label>
-                <input type="text" formControlName="nombrecreservasProv" [(ngModel)]="prov.nombreContactoReservas">
+                <label class="form-label">Nombre Contacto Reservas</label>
+                <input class="form-control form-control-sm" type="text" formControlName="nombrecreservasProv" [(ngModel)]="prov.nombreContactoReservas">
             </div>
 
-             <!--EmailContactoReservas field-->
-             <div>
-                <label>Email Contacto Reservas</label>
-                <input type="text" formControlName="emailcreservasProv" [(ngModel)]="prov.emailContactoReservas">
-            </div>
-
-             <!--NotificarContactoReservas field-->
-             <div>
-                <label>Notificar Contacto Reservas</label>
-                <input type="text" formControlName="notificarcreservasProv" [(ngModel)]="prov.notificarContactoReservas">
-            </div>
-
-             <!--TeléfonoContactoReservas field-->
-             <div>
-                <label>Teléfono Contacto Reservas</label>
-                <input type="text" formControlName="telefonocreservasProv" [(ngModel)]="prov.telefonoContactoReservas">
+             <!--EmailContactoReservas and NotificarContactoReservas and TeléfonoContactoReservas fields-->
+            <div class="row">
+                <div class="col">
+                    <label class="form-label">Email Contacto Reservas</label>
+                    <input class="form-control form-control-sm" type="text" formControlName="emailcreservasProv" [(ngModel)]="prov.emailContactoReservas">
+                </div>
+                <div class="col">
+                    <div class="form-check form-switch">
+                        <label class="form-check-label">¿Notificar?</label>
+                        <input class="form-check-input" type="checkbox" formControlName="notificarcreservasProv" [(ngModel)]="prov.notificarContactoReservas">
+                    </div>
+                </div>
+                <div class="col">
+                    <label class="form-label">Teléfono Contacto Reservas</label>
+                    <input class="form-control form-control-sm" type="text" formControlName="telefonocreservasProv" [(ngModel)]="prov.telefonoContactoReservas">
+                </div>
             </div>
 
              <!--NombreContactoGrupos field-->
              <div>
-                <label>Nombre Contacto Grupos</label>
-                <input type="text" formControlName="nombrecgruposProv" [(ngModel)]="prov.nombreContactoGrupos">
+                <label class="form-label">Nombre Contacto Grupos</label>
+                <input class="form-control form-control-sm" type="text" formControlName="nombrecgruposProv" [(ngModel)]="prov.nombreContactoGrupos">
             </div>
 
-             <!--EmailContactoGrupos field-->
-             <div>
-                <label>Email Contacto Grupos</label>
-                <input type="text" formControlName="emailcgruposProv" [(ngModel)]="prov.emailContactoGrupos">
+             <!--EmailContactoGrupos and NotificarContactoGrupos and TeléfonoContactoGrupos fields-->
+            <div class="row">
+                <div class="col">
+                    <label class="form-label">Email Contacto Grupos</label>
+                    <input class="form-control form-control-sm" type="text" formControlName="emailcgruposProv" [(ngModel)]="prov.emailContactoGrupos">
+                </div>
+                <div class="col">
+                    <div class="form-check form-switch">
+                        <label class="form-check-label">¿Notificar?</label>
+                        <input class="form-check-input" type="checkbox" formControlName="notificarcgruposProv" [(ngModel)]="prov.notificarContactoGrupos">
+                    </div>
+                </div>
+                <div class="col">
+                    <label class="form-label">Teléfono Contacto Grupos</label>
+                    <input class="form-control form-control-sm" type="text" formControlName="telefonocgruposProv" [(ngModel)]="prov.telefonoContactoGrupos">
+                </div>
             </div>
-
-             <!--NotificarContactoGrupos field-->
-             <div>
-                <label>NotificarContactoGrupos</label>
-                <input type="text" formControlName="notificarcgruposProv" [(ngModel)]="prov.notificarContactoGrupos">
-            </div>
-
-             <!--TeléfonoContactoGrupos field-->
-             <div>
-                <label>Teléfono Contacto Grupos</label>
-                <input type="text" formControlName="telefonocgruposProv" [(ngModel)]="prov.telefonoContactoGrupos">
-            </div>
-
+            <br>
+            <!--Submit button and loding button in case-->
             <div *ngIf="loading; else elseBlock">
-                <button class="btn btn-primary" type="button">
+                <center><button class="btn btn-primary" type="button">
                 <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
                 Cargando...
-                </button>
+                </button></center>
             </div>
             <ng-template #elseBlock>
-                <button class ="btn btn-primary" type="submit">Guardar</button>    
+                <center><button class ="btn btn-primary" type="submit">Guardar</button></center>    
             </ng-template>
         </form>
     </div>
