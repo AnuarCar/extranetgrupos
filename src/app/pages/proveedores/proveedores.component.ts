@@ -120,25 +120,4 @@ export class ProveedoresComponent implements OnInit {
 
   }
 
-
-
-  registerProveedor(){
-    this.provedorServ.registrarProveedor(this.prov).subscribe(
-      data =>{
-        console.log("Recibido");
-        this._router.navigate(['/preferencias']);
-      }  ,
-
-      error => {
-        JSON.stringify(this.prov);
-        console.log(this.prov);
-        //console.log(error);
-
-        this.msg = error.error;
-      }
-
-    )
-  }
-
-
 }
