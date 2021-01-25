@@ -175,13 +175,13 @@
             </div>
 
             <div *ngIf="loading; else elseBlock">
-                <button class ="btn btn-primary" type="submit">Guardar</button>
-            </div>
-            <ng-template #elseBlock>
                 <button class="btn btn-primary" type="button">
                 <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
                 Cargando...
                 </button>
+            </div>
+            <ng-template #elseBlock>
+                <button class ="btn btn-primary" type="submit">Guardar</button>    
             </ng-template>
         </form>
     </div>
