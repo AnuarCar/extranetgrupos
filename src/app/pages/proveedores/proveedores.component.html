@@ -174,16 +174,15 @@
                 <input type="text" formControlName="telefonocgruposProv" [(ngModel)]="prov.telefonoContactoGrupos">
             </div>
 
-            <div *ngIf="!loading>
-                <button  class ="btn btn-primary" type="submit">Guardar</button>
+            <div *ngIf="loading; else elseBlock">
+                <button class ="btn btn-primary" type="submit">Guardar</button>
             </div>
-            <div *ngIf="loading">
-                <button  class="btn btn-primary" type="button">
+            <ng-template #elseBlock>
+                <button class="btn btn-primary" type="button">
                 <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
                 Cargando...
                 </button>
-            </div>
-
+            </ng-template>
         </form>
     </div>
 </div>
