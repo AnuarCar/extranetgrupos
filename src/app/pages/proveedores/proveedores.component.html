@@ -1,19 +1,19 @@
-<div>
-    <div>
-        <h2>Registro de proveedor</h2>
+<div style="min-width: 100%;min-height: 200%;background-color:white">
+    <div class="container" style="max-width: 600px;background-color: white;">
+        <h2 class="textual">Registro de proveedor</h2>
         <div>
             <h4 class="textual">Información básica</h4>
         </div>
         <form [formGroup]="ProveedorForm" (ngSubmit)="onSubmit()">
             
             <!--ID field-->
-            <div>
+            <div class="form-group">
                 <label>ID</label>
                 <input type="text" formControlName="idProv" [(ngModel)]="prov.idproveedor">
             </div>
 
             <!--Tipo proveedor field-->
-            <div>
+            <div class="form-group">
                 <label>Tipo proveedor</label>
                 <input type="text" formControlName="idtipoProv" [(ngModel)]="prov.tipoProveedor.idtipoProveedor">
             </div>

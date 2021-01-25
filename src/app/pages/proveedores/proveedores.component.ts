@@ -115,9 +115,5 @@ export class ProveedoresComponent implements OnInit {
         this.msg = error.error;
       }
     );
-
-    //this.loading = false;
-
   }
-
 }
