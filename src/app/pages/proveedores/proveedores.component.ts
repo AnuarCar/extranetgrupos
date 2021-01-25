@@ -113,6 +113,7 @@ export class ProveedoresComponent implements OnInit {
         console.log(this.prov);
         console.log(error);
         console.log(this.prov.notificarContactoGrupos);
+        this.loading = false;
 
         this.msg = error.error;
       }
