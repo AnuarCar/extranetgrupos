@@ -41,19 +41,19 @@ export class ProveedoresComponent implements OnInit {
       descripcionProv:['', Validators.required],
       nombreggeneralProv:['', Validators.required],
       emailggeneralProv:['', Validators.required], 
-      notificarggeneralProv:['', Validators.required],
+      notificarggeneralProv:[''],
       telefonoggeneralProv:['', Validators.required],
       nombregcomercialProv:['', Validators.required],
       emailgcomercialProv:['', Validators.required],
-      notificargcomercialProv:['', Validators.required],
+      notificargcomercialProv:[''],
       telefonogcomercialProv:['', Validators.required],
       nombrecreservasProv:['', Validators.required],
       emailcreservasProv:['', Validators.required],
-      notificarcreservasProv:['', Validators.required],
+      notificarcreservasProv:[''],
       telefonocreservasProv:['', Validators.required],
       nombrecgruposProv:['', Validators.required],
       emailcgruposProv:['', Validators.required],
-      notificarcgruposProv:['', Validators.required],
+      notificarcgruposProv:[''],
       telefonocgruposProv:['', Validators.required],
 
     })
@@ -105,12 +105,14 @@ export class ProveedoresComponent implements OnInit {
       data =>{
         console.log("Recibido");
         this._router.navigate(['/preferencias']);
+        console.log(this.prov.notificarContactoGrupos);
       }  ,
 
       error => {
         JSON.stringify(this.prov);
         console.log(this.prov);
         console.log(error);
+        console.log(this.prov.notificarContactoGrupos);
 
         this.msg = error.error;
       }
