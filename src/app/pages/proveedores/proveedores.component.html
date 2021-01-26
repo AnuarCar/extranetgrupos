@@ -5,22 +5,30 @@
         <b><h6 class="textual">Información básica</h6></b>
         
         <!--Form creation-->
-        <form [formGroup]="ProveedorForm" (ngSubmit)="onSubmit()">
-            
+        <form focusInvalidInput [formGroup]="ProveedorForm" (ngSubmit)="onSubmit()">
+                     
             <!--ID field-->
             <div class="form-group">
-                <label class="form-label">ID</label>
-                <input class="form-control form-control-sm" type="text" formControlName="idProv" [(ngModel)]="prov.idproveedor">
+                <label class="form-label">ID</label><b><label class="text-danger">&nbsp;*</label></b>
+                <input class="form-control form-control-sm" type="text" formControlName="idProv" [(ngModel)]="prov.idproveedor"
+                    [ngClass]="{ 'is-invalid': submitted && f.idProv.errors }">
+                <div *ngIf="submitted && f.idProv.errors" class="invalid-feedback">
+                    <div *ngIf="f.idProv.errors.required">El campo es obligatorio</div>
+                </div>
             </div>
 
             <!--Tipo proveedor field-->
             <div class="form-group">
-                <label class="form-label">Tipo proveedor</label>
-                <select class="form-select form-select-sm" formControlName="idtipoProv" [(ngModel)]="prov.tipoProveedor.idtipoProveedor">
+                <label class="form-label">Tipo proveedor</label><b><label class="text-danger">&nbsp;*</label></b>
+                <select class="form-select form-select-sm" formControlName="idtipoProv" [(ngModel)]="prov.tipoProveedor.idtipoProveedor"
+                    [ngClass]="{ 'is-invalid': submitted && f.idtipoProv.errors }">
                     <option value="1">Hotel</option>
                     <option value="2">Cabaña</option>
                     <option value="3">Apartamento</option>
                 </select>
+                <div *ngIf="submitted && f.idtipoProv.errors" class="invalid-feedback">
+                    <div *ngIf="f.idtipoProv.errors.required">El campo es obligatorio</div>
+                </div>
             </div>
 
              <!--Cadena field-->
@@ -31,8 +39,12 @@
 
              <!--Nombre field-->
              <div>
-                <label class="form-label">Nombre proveedor</label>
-                <input class="form-control form-control-sm" type="text" formControlName="nombreProv" [(ngModel)]="prov.nombre">
+                <label class="form-label">Nombre proveedor</label><b><label class="text-danger">&nbsp;*</label></b>
+                <input class="form-control form-control-sm" type="text" formControlName="nombreProv" [(ngModel)]="prov.nombre"
+                [ngClass]="{ 'is-invalid': submitted && f.nombreProv.errors }">
+                <div *ngIf="submitted && f.nombreProv.errors" class="invalid-feedback">
+                    <div *ngIf="f.nombreProv.errors.required">El campo es obligatorio</div>
+                </div>
             </div>
 
              <!--Check-in and check-out fields-->
@@ -55,20 +67,32 @@
 
              <!--País field-->
              <div>
-                <label class="form-label">País</label>
-                <input class="form-control form-control-sm" type="text" formControlName="paisProv" [(ngModel)]="prov.pais">
+                <label class="form-label">País</label><b><label class="text-danger">&nbsp;*</label></b>
+                <input class="form-control form-control-sm" type="text" formControlName="paisProv" [(ngModel)]="prov.pais"
+                [ngClass]="{ 'is-invalid': submitted && f.paisProv.errors }">
+                <div *ngIf="submitted && f.paisProv.errors" class="invalid-feedback">
+                    <div *ngIf="f.paisProv.errors.required">El campo es obligatorio</div>
+                </div>
             </div>
 
              <!--Ciudad field-->
              <div>
-                <label class="form-label">Ciudad</label>
-                <input class="form-control form-control-sm" type="text" formControlName="CiudadProv" [(ngModel)]="prov.ciudad">
+                <label class="form-label">Ciudad</label><b><label class="text-danger">&nbsp;*</label></b>
+                <input class="form-control form-control-sm" type="text" formControlName="CiudadProv" [(ngModel)]="prov.ciudad"
+                [ngClass]="{ 'is-invalid': submitted && f.CiudadProv.errors }">
+                <div *ngIf="submitted && f.CiudadProv.errors" class="invalid-feedback">
+                    <div *ngIf="f.CiudadProv.errors.required">El campo es obligatorio</div>
+                </div>
             </div>
 
              <!--Dirección field-->
              <div>
-                <label class="form-label">Dirección</label>
-                <input class="form-control form-control-sm" type="text" formControlName="direccionProv" [(ngModel)]="prov.direccion">
+                <label class="form-label">Dirección</label><b><label class="text-danger">&nbsp;*</label></b>
+                <input class="form-control form-control-sm" type="text" formControlName="direccionProv" [(ngModel)]="prov.direccion"
+                [ngClass]="{ 'is-invalid': submitted && f.direccionProv.errors }">
+                <div *ngIf="submitted && f.direccionProv.errors" class="invalid-feedback">
+                    <div *ngIf="f.direccionProv.errors.required">El campo es obligatorio</div>
+                </div>
             </div>
 
              <!--Teléfono field-->
@@ -139,15 +163,23 @@
 
              <!--NombreContactoReservas field-->
              <div>
-                <label class="form-label">Nombre Contacto Reservas</label>
-                <input class="form-control form-control-sm" type="text" formControlName="nombrecreservasProv" [(ngModel)]="prov.nombreContactoReservas">
+                <label class="form-label">Nombre Contacto Reservas</label><b><label class="text-danger">&nbsp;*</label></b>
+                <input class="form-control form-control-sm" type="text" formControlName="nombrecreservasProv" [(ngModel)]="prov.nombreContactoReservas"
+                [ngClass]="{ 'is-invalid': submitted && f.nombrecreservasProv.errors }">
+                <div *ngIf="submitted && f.nombrecreservasProv.errors" class="invalid-feedback">
+                    <div *ngIf="f.nombrecreservasProv.errors.required">El campo es obligatorio</div>
+                </div>
             </div>
 
              <!--EmailContactoReservas and NotificarContactoReservas and TeléfonoContactoReservas fields-->
             <div class="row">
                 <div class="col">
-                    <label class="form-label">Email Contacto Reservas</label>
-                    <input class="form-control form-control-sm" type="text" formControlName="emailcreservasProv" [(ngModel)]="prov.emailContactoReservas">
+                    <label class="form-label">Email Contacto Reservas</label><b><label class="text-danger">&nbsp;*</label></b>
+                    <input class="form-control form-control-sm" type="text" formControlName="emailcreservasProv" [(ngModel)]="prov.emailContactoReservas"
+                    [ngClass]="{ 'is-invalid': submitted && f.emailcreservasProv.errors }">
+                    <div *ngIf="submitted && f.emailcreservasProv.errors" class="invalid-feedback">
+                        <div *ngIf="f.emailcreservasProv.errors.required">El campo es obligatorio</div>
+                    </div>
                 </div>
                 <div class="col">
                     <div class="form-check form-switch">
@@ -156,8 +188,12 @@
                     </div>
                 </div>
                 <div class="col">
-                    <label class="form-label">Teléfono Contacto Reservas</label>
-                    <input class="form-control form-control-sm" type="text" formControlName="telefonocreservasProv" [(ngModel)]="prov.telefonoContactoReservas">
+                    <label class="form-label">Teléfono Contacto Reservas</label><b><label class="text-danger">&nbsp;*</label></b>
+                    <input class="form-control form-control-sm" type="text" formControlName="telefonocreservasProv" [(ngModel)]="prov.telefonoContactoReservas"
+                    [ngClass]="{ 'is-invalid': submitted && f.telefonocreservasProv.errors }">
+                    <div *ngIf="submitted && f.telefonocreservasProv.errors" class="invalid-feedback">
+                        <div *ngIf="f.telefonocreservasProv.errors.required">El campo es obligatorio</div>
+                    </div>
                 </div>
             </div>
 
@@ -193,8 +229,10 @@
                 </button></center>
             </div>
             <ng-template #elseBlock>
-                <center><button class ="btn btn-primary" type="submit">Guardar</button></center>    
-            </ng-template>
+                <center>
+                    <button class ="btn btn-primary" type="submit">Guardar</button>
+                </center>
+            </ng-template>  
         </form>
     </div>
 </div>

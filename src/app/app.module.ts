@@ -16,6 +16,7 @@ import es from '@angular/common/locales/es';
 import { PreferenciasComponent } from './pages/preferencias/preferencias.component';
 import { ProveedoresComponent } from './pages/proveedores/proveedores.component';
 import { ProveedorService } from './service/proveedor.service';
+import { FormDirective } from './constant/form.directive';
 
 
 registerLocaleData(es);
@@ -34,7 +35,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     PreferenciasComponent,
-    ProveedoresComponent
+    ProveedoresComponent,
+    FormDirective
   ],
   imports: [
     BrowserModule,

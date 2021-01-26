@@ -17,6 +17,7 @@ export class ProveedoresComponent implements OnInit {
   prov:Proveedor;
   submitted = false;
   msg = '';
+  abc:any;
 
   //this.prov.tipoProveedor.idtipoProveedor = 
 
@@ -29,32 +30,32 @@ export class ProveedoresComponent implements OnInit {
     this.ProveedorForm = this.formBuilder.group({
       idProv:['', Validators.required],
       idtipoProv:['', Validators.required],  
-      cadenaProv:['', Validators.required],
+      cadenaProv:[''],
       nombreProv:['', Validators.required],
-      checkinProv:['', Validators.required],
-      checkoutProv:['', Validators.required],
-      estrellasProv:['', Validators.required],
+      checkinProv:[''],
+      checkoutProv:[''],
+      estrellasProv:[''],
       paisProv:['', Validators.required],
       CiudadProv:['', Validators.required],
       direccionProv:['', Validators.required],
-      telefonoProv:['', Validators.required],
-      descripcionProv:['', Validators.required],
-      nombreggeneralProv:['', Validators.required],
-      emailggeneralProv:['', Validators.required], 
+      telefonoProv:[''],
+      descripcionProv:[''],
+      nombreggeneralProv:[''],
+      emailggeneralProv:[''], 
       notificarggeneralProv:[''],
-      telefonoggeneralProv:['', Validators.required],
-      nombregcomercialProv:['', Validators.required],
-      emailgcomercialProv:['', Validators.required],
+      telefonoggeneralProv:[''],
+      nombregcomercialProv:[''],
+      emailgcomercialProv:[''],
       notificargcomercialProv:[''],
-      telefonogcomercialProv:['', Validators.required],
+      telefonogcomercialProv:[''],
       nombrecreservasProv:['', Validators.required],
       emailcreservasProv:['', Validators.required],
       notificarcreservasProv:[''],
       telefonocreservasProv:['', Validators.required],
-      nombrecgruposProv:['', Validators.required],
-      emailcgruposProv:['', Validators.required],
+      nombrecgruposProv:[''],
+      emailcgruposProv:[''],
       notificarcgruposProv:[''],
-      telefonocgruposProv:['', Validators.required],
+      telefonocgruposProv:[''],
 
     })
 
