@@ -17,14 +17,17 @@ import { PreferenciasComponent } from './pages/preferencias/preferencias.compone
 import { ProveedoresComponent } from './pages/proveedores/proveedores.component';
 import { ProveedorService } from './service/proveedor.service';
 import { FormDirective } from './constant/form.directive';
+import { MainProveedoresComponent } from './pages/proveedores/main-proveedores.component';
 
 
 registerLocaleData(es);
 
 const routes: Routes = [
   { path: 'preferencias', component: PreferenciasComponent },
+  { path: 'main-proveedores', component:MainProveedoresComponent },
   { path: 'proveedores', component: ProveedoresComponent },
   { path: '', component: PreferenciasComponent, pathMatch: 'full' },
+
   //El '/' se puede camboas por el nombre de la carpeta, por ejemplo para re-dirigir a una pagina 404
   //Comment testing
   { path: '**', redirectTo: '/', pathMatch: 'full' },
@@ -36,7 +39,8 @@ const routes: Routes = [
     AppComponent,
     PreferenciasComponent,
     ProveedoresComponent,
-    FormDirective
+    FormDirective,
+    MainProveedoresComponent
   ],
   imports: [
     BrowserModule,

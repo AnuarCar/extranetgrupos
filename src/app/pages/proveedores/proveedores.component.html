@@ -10,7 +10,10 @@
             <!--ID field-->
             <div class="form-group">
                 <label class="form-label">ID</label><b><label class="text-danger">&nbsp;*</label></b>
-                <input class="form-control form-control-sm" type="text" formControlName="idProv" [(ngModel)]="prov.idproveedor"
+                <!--ngModel on the same form field as formControlName
+                    directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                <!--<input class="form-control form-control-sm" type="text" formControlName="idProv" [(ngModel)]="prov.idproveedor"-->
+                <input class="form-control form-control-sm" type="text" formControlName="idProv"
                     [ngClass]="{ 'is-invalid': submitted && f.idProv.errors }">
                 <div *ngIf="submitted && f.idProv.errors" class="invalid-feedback">
                     <div *ngIf="f.idProv.errors.required">El campo es obligatorio</div>
@@ -20,7 +23,10 @@
             <!--Tipo proveedor field-->
             <div class="form-group">
                 <label class="form-label">Tipo proveedor</label><b><label class="text-danger">&nbsp;*</label></b>
-                <select class="form-select form-select-sm" formControlName="idtipoProv" [(ngModel)]="prov.tipoProveedor.idtipoProveedor"
+                <!--ngModel on the same form field as formControlName
+                directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                <!--<select class="form-select form-select-sm" formControlName="idtipoProv" [(ngModel)]="prov.tipoProveedor.idtipoProveedor"-->
+                    <select class="form-select form-select-sm" formControlName="idtipoProv"
                     [ngClass]="{ 'is-invalid': submitted && f.idtipoProv.errors }">
                     <option value="1">Hotel</option>
                     <option value="2">Cabaña</option>
@@ -34,13 +40,19 @@
              <!--Cadena field-->
              <div>
                 <label class="form-label">Cadena</label>
-                <input class="form-control form-control-sm" type="text" formControlName="cadenaProv" [(ngModel)]="prov.cadena">
+                <!--ngModel on the same form field as formControlName
+                directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                <!--<input class="form-control form-control-sm" type="text" formControlName="cadenaProv" [(ngModel)]="prov.cadena">-->
+                <input class="form-control form-control-sm" type="text" formControlName="cadenaProv">
             </div>
 
              <!--Nombre field-->
              <div>
                 <label class="form-label">Nombre proveedor</label><b><label class="text-danger">&nbsp;*</label></b>
-                <input class="form-control form-control-sm" type="text" formControlName="nombreProv" [(ngModel)]="prov.nombre"
+                <!--ngModel on the same form field as formControlName
+                directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                <!--<input class="form-control form-control-sm" type="text" formControlName="nombreProv" [(ngModel)]="prov.nombre"-->
+                <input class="form-control form-control-sm" type="text" formControlName="nombreProv"
                 [ngClass]="{ 'is-invalid': submitted && f.nombreProv.errors }">
                 <div *ngIf="submitted && f.nombreProv.errors" class="invalid-feedback">
                     <div *ngIf="f.nombreProv.errors.required">El campo es obligatorio</div>
@@ -51,24 +63,36 @@
              <div class="row">
                  <div class="col">
                     <label class="form-label">Check-in</label>
-                    <input class="form-control form-control-sm" type="time" formControlName="checkinProv" [(ngModel)]="prov.checkin">
+                    <!--ngModel on the same form field as formControlName
+                    directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                    <!--<input class="form-control form-control-sm" type="time" formControlName="checkinProv" [(ngModel)]="prov.checkin">-->
+                    <input class="form-control form-control-sm" type="time" formControlName="checkinProv">
                 </div>
                 <div class="col">
                     <label class="form-label">Check-out</label>
-                    <input class="form-control form-control-sm" type="time" formControlName="checkoutProv" [(ngModel)]="prov.checkout">
+                    <!--ngModel on the same form field as formControlName
+                    directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                    <!--<input class="form-control form-control-sm" type="time" formControlName="checkoutProv" [(ngModel)]="prov.checkout">-->
+                    <input class="form-control form-control-sm" type="time" formControlName="checkoutProv">
                 </div>
             </div>
 
              <!--Estrellas field-->
              <div>
                 <label class="form-label">Estrellas</label>
-                <input class="form-control form-control-sm" type="number" formControlName="estrellasProv" [(ngModel)]="prov.estrellas">
+                <!--ngModel on the same form field as formControlName
+                directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                <!--<input class="form-control form-control-sm" type="number" formControlName="estrellasProv" [(ngModel)]="prov.estrellas">-->
+                <input class="form-control form-control-sm" type="number" formControlName="estrellasProv">
             </div>
 
              <!--País field-->
              <div>
                 <label class="form-label">País</label><b><label class="text-danger">&nbsp;*</label></b>
-                <input class="form-control form-control-sm" type="text" formControlName="paisProv" [(ngModel)]="prov.pais"
+                <!--ngModel on the same form field as formControlName
+                directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                <!--<input class="form-control form-control-sm" type="text" formControlName="paisProv" [(ngModel)]="prov.pais"-->
+                <input class="form-control form-control-sm" type="text" formControlName="paisProv"
                 [ngClass]="{ 'is-invalid': submitted && f.paisProv.errors }">
                 <div *ngIf="submitted && f.paisProv.errors" class="invalid-feedback">
                     <div *ngIf="f.paisProv.errors.required">El campo es obligatorio</div>
@@ -78,7 +102,10 @@
              <!--Ciudad field-->
              <div>
                 <label class="form-label">Ciudad</label><b><label class="text-danger">&nbsp;*</label></b>
-                <input class="form-control form-control-sm" type="text" formControlName="CiudadProv" [(ngModel)]="prov.ciudad"
+                <!--ngModel on the same form field as formControlName
+                directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                <!--<input class="form-control form-control-sm" type="text" formControlName="CiudadProv" [(ngModel)]="prov.ciudad"-->
+                <input class="form-control form-control-sm" type="text" formControlName="CiudadProv"
                 [ngClass]="{ 'is-invalid': submitted && f.CiudadProv.errors }">
                 <div *ngIf="submitted && f.CiudadProv.errors" class="invalid-feedback">
                     <div *ngIf="f.CiudadProv.errors.required">El campo es obligatorio</div>
@@ -88,7 +115,10 @@
              <!--Dirección field-->
              <div>
                 <label class="form-label">Dirección</label><b><label class="text-danger">&nbsp;*</label></b>
-                <input class="form-control form-control-sm" type="text" formControlName="direccionProv" [(ngModel)]="prov.direccion"
+                <!--ngModel on the same form field as formControlName
+                directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                <!--<input class="form-control form-control-sm" type="text" formControlName="direccionProv" [(ngModel)]="prov.direccion"-->
+                <input class="form-control form-control-sm" type="text" formControlName="direccionProv"
                 [ngClass]="{ 'is-invalid': submitted && f.direccionProv.errors }">
                 <div *ngIf="submitted && f.direccionProv.errors" class="invalid-feedback">
                     <div *ngIf="f.direccionProv.errors.required">El campo es obligatorio</div>
@@ -98,13 +128,19 @@
              <!--Teléfono field-->
              <div>
                 <label class="form-label">Teléfono</label>
-                <input class="form-control form-control-sm" type="text" formControlName="telefonoProv" [(ngModel)]="prov.telefono">
+                <!--ngModel on the same form field as formControlName
+                directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                <!--<input class="form-control form-control-sm" type="text" formControlName="telefonoProv" [(ngModel)]="prov.telefono">-->
+                <input class="form-control form-control-sm" type="text" formControlName="telefonoProv">
             </div>
 
              <!--Descripción field-->
              <div>
                 <label class="form-label">Descripción</label>
-                <textarea class="form-control form-control-sm" rows="4" formControlName="descripcionProv" [(ngModel)]="prov.descripcionHotel"></textarea>
+                <!--ngModel on the same form field as formControlName
+                directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                <!--<textarea class="form-control form-control-sm" rows="4" formControlName="descripcionProv" [(ngModel)]="prov.descripcionHotel"></textarea>-->
+                <textarea class="form-control form-control-sm" rows="4" formControlName="descripcionProv"></textarea>
             </div>
 
             <!--Sección información de contacto -->
@@ -116,55 +152,82 @@
              <!--NombreGeranteGeneral field-->
              <div>
                 <label class="form-label">Nombre Gerente General</label>
-                <input class="form-control form-control-sm" type="text" formControlName="nombreggeneralProv"[(ngModel)]="prov.nombreGerenteGeneral">
+                <!--ngModel on the same form field as formControlName
+                directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                <!--<input class="form-control form-control-sm" type="text" formControlName="nombreggeneralProv"[(ngModel)]="prov.nombreGerenteGeneral">-->
+                <input class="form-control form-control-sm" type="text" formControlName="nombreggeneralProv">
             </div>
 
              <!--EmailGerenteGeneral and NotificarGerenteGeneral and TeléfonoGerenteGeneral fields-->
              <div class="row">
                 <div class="col">
                     <label class="form-label">Email</label>
-                    <input class="form-control form-control-sm" type="text" formControlName="emailggeneralProv" [(ngModel)]="prov.emailGerenteGeneral">
+                    <!--ngModel on the same form field as formControlName
+                    directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                    <!--<input class="form-control form-control-sm" type="text" formControlName="emailggeneralProv" [(ngModel)]="prov.emailGerenteGeneral">-->
+                    <input class="form-control form-control-sm" type="text" formControlName="emailggeneralProv">
                 </div>
                 <div class="col">
                     <div class="form-check form-switch">
                         <label class="form-check-label">¿Notificar?</label>
-                        <input class="form-check-input" type="checkbox" formControlName="notificarggeneralProv" [(ngModel)]="prov.notificarGerenteGeneral">
+                        <!--ngModel on the same form field as formControlName
+                        directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                        <!--<input class="form-check-input" type="checkbox" formControlName="notificarggeneralProv" [(ngModel)]="prov.notificarGerenteGeneral">-->
+                        <input class="form-check-input" type="checkbox" formControlName="notificarggeneralProv">
                     </div>
                 </div>
                 <div class="col">
                     <label class="form-label">Teléfono Gerente General</label>
-                    <input class="form-control form-control-sm" type="text" formControlName="telefonoggeneralProv" [(ngModel)]="prov.telefonoGerenteGeneral">
+                    <!--ngModel on the same form field as formControlName
+                    directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                    <!--<input class="form-control form-control-sm" type="text" formControlName="telefonoggeneralProv" [(ngModel)]="prov.telefonoGerenteGeneral">-->
+                    <input class="form-control form-control-sm" type="text" formControlName="telefonoggeneralProv">
                 </div>
             </div>            
 
              <!--NombreGerenteComercial field-->
              <div>
                 <label class="form-label">Nombre Gerente Comercial</label>
-                <input class="form-control form-control-sm" type="text" formControlName="nombregcomercialProv" [(ngModel)]="prov.nombreGerenteComercial">
+                <!--ngModel on the same form field as formControlName
+                directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                <!--<input class="form-control form-control-sm" type="text" formControlName="nombregcomercialProv" [(ngModel)]="prov.nombreGerenteComercial">-->
+                <input class="form-control form-control-sm" type="text" formControlName="nombregcomercialProv">
             </div>
 
              <!--EmailGerenteComercial and NotificarGerenteComercial and TeléfonoGerenteComercial fields-->
             <div class="row">
                 <div class="col">
                     <label class="form-label">Email Gerente Comercial</label>
-                    <input class="form-control form-control-sm" type="text" formControlName="emailgcomercialProv" [(ngModel)]="prov.emailGerenteComercial">
+                    <!--ngModel on the same form field as formControlName
+                    directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                    <!--<input class="form-control form-control-sm" type="text" formControlName="emailgcomercialProv" [(ngModel)]="prov.emailGerenteComercial">-->
+                    <input class="form-control form-control-sm" type="text" formControlName="emailgcomercialProv">
                 </div>
                 <div class="col">
                     <div class="form-check form-switch">
                         <label class="form-check-label">¿Notificar?</label>
-                        <input class="form-check-input" type="checkbox" formControlName="notificargcomercialProv" [(ngModel)]="prov.notificarGerenteComerial">
+                        <!--ngModel on the same form field as formControlName
+                        directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                        <!--<input class="form-check-input" type="checkbox" formControlName="notificargcomercialProv" [(ngModel)]="prov.notificarGerenteComerial">-->
+                        <input class="form-check-input" type="checkbox" formControlName="notificargcomercialProv">
                     </div>
                 </div>
                 <div class="col">
                     <label class="form-label">Teléfono Gerente Comercial</label>
-                    <input class="form-control form-control-sm" type="text" formControlName="telefonogcomercialProv" [(ngModel)]="prov.telefonoGerenteComercial">
+                    <!--ngModel on the same form field as formControlName
+                    directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                    <!--<input class="form-control form-control-sm" type="text" formControlName="telefonogcomercialProv" [(ngModel)]="prov.telefonoGerenteComercial">-->
+                    <input class="form-control form-control-sm" type="text" formControlName="telefonogcomercialProv">
                 </div>
             </div>
 
              <!--NombreContactoReservas field-->
              <div>
                 <label class="form-label">Nombre Contacto Reservas</label><b><label class="text-danger">&nbsp;*</label></b>
-                <input class="form-control form-control-sm" type="text" formControlName="nombrecreservasProv" [(ngModel)]="prov.nombreContactoReservas"
+                <!--ngModel on the same form field as formControlName
+                directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                <!--<input class="form-control form-control-sm" type="text" formControlName="nombrecreservasProv" [(ngModel)]="prov.nombreContactoReservas"-->
+                <input class="form-control form-control-sm" type="text" formControlName="nombrecreservasProv"
                 [ngClass]="{ 'is-invalid': submitted && f.nombrecreservasProv.errors }">
                 <div *ngIf="submitted && f.nombrecreservasProv.errors" class="invalid-feedback">
                     <div *ngIf="f.nombrecreservasProv.errors.required">El campo es obligatorio</div>
@@ -175,7 +238,10 @@
             <div class="row">
                 <div class="col">
                     <label class="form-label">Email Contacto Reservas</label><b><label class="text-danger">&nbsp;*</label></b>
-                    <input class="form-control form-control-sm" type="text" formControlName="emailcreservasProv" [(ngModel)]="prov.emailContactoReservas"
+                    <!--ngModel on the same form field as formControlName
+                    directives has been deprecated in Angular v6 and will be removed in a future version of Angula-->
+                    <!--<input class="form-control form-control-sm" type="text" formControlName="emailcreservasProv" [(ngModel)]="prov.emailContactoReservas"-->
+                    <input class="form-control form-control-sm" type="text" formControlName="emailcreservasProv"
                     [ngClass]="{ 'is-invalid': submitted && f.emailcreservasProv.errors }">
                     <div *ngIf="submitted && f.emailcreservasProv.errors" class="invalid-feedback">
                         <div *ngIf="f.emailcreservasProv.errors.required">El campo es obligatorio</div>
@@ -184,12 +250,18 @@
                 <div class="col">
                     <div class="form-check form-switch">
                         <label class="form-check-label">¿Notificar?</label>
-                        <input class="form-check-input" type="checkbox" formControlName="notificarcreservasProv" [(ngModel)]="prov.notificarContactoReservas">
+                        <!--ngModel on the same form field as formControlName
+                        directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                        <!--<input class="form-check-input" type="checkbox" formControlName="notificarcreservasProv" [(ngModel)]="prov.notificarContactoReservas">-->
+                        <input class="form-check-input" type="checkbox" formControlName="notificarcreservasProv">
                     </div>
                 </div>
                 <div class="col">
                     <label class="form-label">Teléfono Contacto Reservas</label><b><label class="text-danger">&nbsp;*</label></b>
-                    <input class="form-control form-control-sm" type="text" formControlName="telefonocreservasProv" [(ngModel)]="prov.telefonoContactoReservas"
+                    <!--ngModel on the same form field as formControlName
+                    directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                    <!--<input class="form-control form-control-sm" type="text" formControlName="telefonocreservasProv" [(ngModel)]="prov.telefonoContactoReservas"-->
+                    <input class="form-control form-control-sm" type="text" formControlName="telefonocreservasProv"
                     [ngClass]="{ 'is-invalid': submitted && f.telefonocreservasProv.errors }">
                     <div *ngIf="submitted && f.telefonocreservasProv.errors" class="invalid-feedback">
                         <div *ngIf="f.telefonocreservasProv.errors.required">El campo es obligatorio</div>
@@ -200,24 +272,36 @@
              <!--NombreContactoGrupos field-->
              <div>
                 <label class="form-label">Nombre Contacto Grupos</label>
-                <input class="form-control form-control-sm" type="text" formControlName="nombrecgruposProv" [(ngModel)]="prov.nombreContactoGrupos">
+                <!--ngModel on the same form field as formControlName
+                directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                <!--<input class="form-control form-control-sm" type="text" formControlName="nombrecgruposProv" [(ngModel)]="prov.nombreContactoGrupos">-->
+                <input class="form-control form-control-sm" type="text" formControlName="nombrecgruposProv">
             </div>
 
              <!--EmailContactoGrupos and NotificarContactoGrupos and TeléfonoContactoGrupos fields-->
             <div class="row">
                 <div class="col">
                     <label class="form-label">Email Contacto Grupos</label>
-                    <input class="form-control form-control-sm" type="text" formControlName="emailcgruposProv" [(ngModel)]="prov.emailContactoGrupos">
+                    <!--ngModel on the same form field as formControlName
+                    directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                    <!--<input class="form-control form-control-sm" type="text" formControlName="emailcgruposProv" [(ngModel)]="prov.emailContactoGrupos">-->
+                    <input class="form-control form-control-sm" type="text" formControlName="emailcgruposProv">
                 </div>
                 <div class="col">
                     <div class="form-check form-switch">
                         <label class="form-check-label">¿Notificar?</label>
-                        <input class="form-check-input" type="checkbox" formControlName="notificarcgruposProv" [(ngModel)]="prov.notificarContactoGrupos">
+                        <!--ngModel on the same form field as formControlName
+                        directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                        <!--<input class="form-check-input" type="checkbox" formControlName="notificarcgruposProv" [(ngModel)]="prov.notificarContactoGrupos">-->
+                        <input class="form-check-input" type="checkbox" formControlName="notificarcgruposProv">
                     </div>
                 </div>
                 <div class="col">
                     <label class="form-label">Teléfono Contacto Grupos</label>
-                    <input class="form-control form-control-sm" type="text" formControlName="telefonocgruposProv" [(ngModel)]="prov.telefonoContactoGrupos">
+                    <!--ngModel on the same form field as formControlName
+                    directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                    <!--<input class="form-control form-control-sm" type="text" formControlName="telefonocgruposProv" [(ngModel)]="prov.telefonoContactoGrupos">-->
+                    <input class="form-control form-control-sm" type="text" formControlName="telefonocgruposProv">
                 </div>
             </div>
             <br>
@@ -232,7 +316,13 @@
                 <center>
                     <button class ="btn btn-primary" type="submit">Guardar</button>
                 </center>
-            </ng-template>  
+            </ng-template>
+            <!--Error alert-->
+            <br>
+            <div *ngIf="msg_error" class="alert alert-danger" role="alert">
+                ¡Error conectando con el servicio!
+            </div>
+            
         </form>
     </div>
 </div>

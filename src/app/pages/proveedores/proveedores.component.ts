@@ -16,8 +16,7 @@ export class ProveedoresComponent implements OnInit {
   loading = false;
   prov:Proveedor;
   submitted = false;
-  msg = '';
-  abc:any;
+  msg_error = false;
 
   //this.prov.tipoProveedor.idtipoProveedor = 
 
@@ -105,18 +104,14 @@ export class ProveedoresComponent implements OnInit {
     this.provedorServ.registrarProveedor(this.prov).subscribe(
       data =>{
         console.log("Recibido");
-        this._router.navigate(['/preferencias']);
+        this._router.navigate(['/main-proveedores']);
         console.log(this.prov.notificarContactoGrupos);
       }  ,
 
-      error => {
-        JSON.stringify(this.prov);
-        console.log(this.prov);
-        console.log(error);
-        console.log(this.prov.notificarContactoGrupos);
+      error => {     
         this.loading = false;
-
-        this.msg = error.error;
+        this.msg_error=true;       
+        //alert("Error conectando con el servicio");
       }
     );
   }
