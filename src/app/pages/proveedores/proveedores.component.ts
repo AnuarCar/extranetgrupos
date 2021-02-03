@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProveedorService } from '../../service/proveedor.service';
 import { Proveedor } from '../../model/Proveedor';
+import { Tipoproveedor } from '../../model/Tipoproveedor';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -17,17 +18,27 @@ export class ProveedoresComponent implements OnInit {
   prov:Proveedor;
   submitted = false;
   msg_error = false;
+  tipo_proveedor:Tipoproveedor[];
 
-  //this.prov.tipoProveedor.idtipoProveedor = 
 
-
-  constructor(private provedorServ : ProveedorService, private _router : Router, private formBuilder: FormBuilder) { }
+  constructor(private provedorServ : ProveedorService, private _router : Router, private formBuilder: FormBuilder) { 
+  }
 
   get f() { return this.ProveedorForm.controls; }
 
   ngOnInit(): void {
+  
+    //Cargar información de tipo proveedor para registro de contratos
+    //this.provedorServ.ObtenertipoProveedor().subscribe(res => {
+    //  this.tipo_proveedor = res;
+    //},
+    //  error => {
+    //    console.log("error al cargar");
+    //  }
+    //)
+
     this.ProveedorForm = this.formBuilder.group({
-      idProv:['', Validators.required],
+      //idProv:['', Validators.required],
       idtipoProv:['', Validators.required],  
       cadenaProv:[''],
       nombreProv:['', Validators.required],
@@ -72,7 +83,7 @@ export class ProveedoresComponent implements OnInit {
 
     this.loading = true;
     debugger
-    this.prov.idproveedor=this.f.idProv.value;
+    //this.prov.idproveedor=this.f.idProv.value;
     this.prov.tipoProveedor.idtipoProveedor=this.f.idtipoProv.value;
     this.prov.cadena=this.f.cadenaProv.value;
     this.prov.nombre=this.f.nombreProv.value;
@@ -105,14 +116,17 @@ export class ProveedoresComponent implements OnInit {
       data =>{
         console.log("Recibido");
         this._router.navigate(['/main-proveedores']);
-        console.log(this.prov.notificarContactoGrupos);
       }  ,
 
       error => {     
         this.loading = false;
-        this.msg_error=true;       
-        //alert("Error conectando con el servicio");
+        this.msg_error=true;
       }
     );
   }
+
+
+
+
+
 }

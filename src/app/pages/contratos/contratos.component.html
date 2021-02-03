@@ -1,0 +1,112 @@
+<div>
+    <b><h5 class="textual">Registro de contrato</h5></b><br>  
+
+    <div class="container" style="max-width: 650px;">
+      
+        <b><h6 class="textual">Información básica</h6></b>
+        
+        <!--Form creation-->
+        <form focusInvalidInput [formGroup]="ContratoForm" (ngSubmit)="onSubmit()">
+                     
+            <!--Name provider field-->
+            <!--usar para búsqueda inteligente del registro de contratos-->
+            <div>
+                <label class="form-label">ID proveedor - Nombre proveedor</label><b><label class="text-danger">&nbsp;*</label></b>
+                <input class="form-select form-select-sm" type="search" list="listaproveedores" formControlName="proveedor" autofocus
+                [ngClass]="{ 'is-invalid': submitted && f.proveedor.errors }">
+                <div *ngIf="submitted && f.proveedor.errors" class="invalid-feedback">
+                    <div *ngIf="f.proveedor.errors.required">El campo es obligatorio</div>
+                </div>
+                <datalist id="listaproveedores">
+                    <option *ngFor="let item of proveedor" [value]="item.idproveedor">{{item.nombre}}</option>
+                </datalist>
+            </div>
+
+            <!--ID field-->
+            <!--<div class="form-group">
+                <label class="form-label">ID proveedor</label><b><label class="text-danger">&nbsp;*</label></b>
+                <input class="form-control form-control-sm" type="text" formControlName="proveedor" autofocus
+                [ngClass]="{ 'is-invalid': submitted && f.proveedor.errors }">
+                <div *ngIf="submitted && f.proveedor.errors" class="invalid-feedback">
+                    <div *ngIf="f.proveedor.errors.required">El campo es obligatorio</div>
+                </div>                
+            </div>-->
+
+
+            <!--Tipo negociación field-->
+            <div class="form-group">
+                <label class="form-label">Tipo de negciación</label><b><label class="text-danger">&nbsp;*</label></b>
+                <!--ngModel on the same form field as formControlName
+                directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                <!--<select class="form-select form-select-sm" formControlName="idtipoProv" [(ngModel)]="prov.tipoProveedor.idtipoProveedor"-->
+                    <select class="form-select form-select-sm" formControlName="tipoNegociacion"
+                    [ngClass]="{ 'is-invalid': submitted && f.tipoNegociacion.errors }">
+                    <option value="1">Comisionable</option>
+                    <option value="2">Neta</option>
+                </select>
+                <div *ngIf="submitted && f.tipoNegociacion.errors" class="invalid-feedback">
+                    <div *ngIf="f.tipoNegociacion.errors.required">El campo es obligatorio</div>
+                </div>
+            </div>
+
+              <!--% comission field-->
+              <div>
+                <label class="form-label">% Comisión</label>
+                <!--ngModel on the same form field as formControlName
+                directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                <!--<input class="form-control form-control-sm" type="text" formControlName="cadenaProv" [(ngModel)]="prov.cadena">-->
+                <input class="form-control form-control-sm" type="text" formControlName="prctComision"
+                [ngClass]="{ 'is-invalid': submitted && f.prctComision.errors }">
+                <div *ngIf="submitted && f.prctComision.errors" class="invalid-feedback">
+                    <div *ngIf="f.prctComision.errors.required">El campo es obligatorio</div>
+                </div>
+            </div>
+
+
+            <!--% IVA field-->
+            <div>
+                <label class="form-label">IVA</label>
+                <!--ngModel on the same form field as formControlName
+                directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                <!--<input class="form-control form-control-sm" type="text" formControlName="cadenaProv" [(ngModel)]="prov.cadena">-->
+                <input class="form-control form-control-sm" type="number" formControlName="iva"
+                [ngClass]="{ 'is-invalid': submitted && f.iva.errors }">
+                <div *ngIf="submitted && f.iva.errors" class="invalid-feedback">
+                    <div *ngIf="f.iva.errors.required">El campo es obligatorio</div>
+                </div>
+            </div>
+
+             <!--% FEE field-->
+             <div>
+                <label class="form-label">FEE o impuesto hotelero</label>
+                <!--ngModel on the same form field as formControlName
+                directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                <!--<input class="form-control form-control-sm" type="text" formControlName="cadenaProv" [(ngModel)]="prov.cadena">-->
+                <input class="form-control form-control-sm" type="number" formControlName="fee"
+                [ngClass]="{ 'is-invalid': submitted && f.fee.errors }">
+                <div *ngIf="submitted && f.fee.errors" class="invalid-feedback">
+                    <div *ngIf="f.fee.errors.required">El campo es obligatorio</div>
+                </div>
+            </div>
+
+            <br>
+            <!--Submit button and loding button in case-->
+            <div *ngIf="loading; else elseBlock">
+                <center><button class="btn btn-primary" type="button">
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                Cargando...
+                </button></center>
+            </div>
+            <ng-template #elseBlock>
+                <center>
+                    <button class ="btn btn-primary" type="submit">Guardar</button>
+                </center>
+            </ng-template>
+            <!--Error alert-->
+            <br>
+            <div *ngIf="msg_error" class="alert alert-danger" role="alert">
+                ¡Error conectando con el servicio!
+            </div>
+        </form>
+    </div>
+</div>

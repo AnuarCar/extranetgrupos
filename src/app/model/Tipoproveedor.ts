@@ -1,3 +1,6 @@
+import { Observable } from "rxjs";
+
 export class Tipoproveedor {
-    idtipoProveedor:Number=1
+    idtipoProveedor:Number;
+    nombreTipoProveedor:String;
 }

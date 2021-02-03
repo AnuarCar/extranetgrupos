@@ -1,5 +1,15 @@
 <div>
     <b><h5 class="textual">Registro de proveedor</h5></b><br>
+
+    <!--usar para búsqueda inteligente del registro de contratos-->
+    <!--<div>
+        <input class="form-select form-select-sm" type="search" list="listaproveedores">
+        <datalist id="listaproveedores">
+            <option *ngFor="let item of tipo_proveedor" [value]="item.nombreTipoProveedor"></option>
+        </datalist>
+    </div>-->
+    
+
     <div class="container" style="max-width: 650px;">
       
         <b><h6 class="textual">Información básica</h6></b>
@@ -8,17 +18,17 @@
         <form focusInvalidInput [formGroup]="ProveedorForm" (ngSubmit)="onSubmit()">
                      
             <!--ID field-->
-            <div class="form-group">
+            <!--<div class="form-group">
                 <label class="form-label">ID</label><b><label class="text-danger">&nbsp;*</label></b>
-                <!--ngModel on the same form field as formControlName
-                    directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
-                <!--<input class="form-control form-control-sm" type="text" formControlName="idProv" [(ngModel)]="prov.idproveedor"-->
-                <input class="form-control form-control-sm" type="text" formControlName="idProv"
+                ngModel on the same form field as formControlName
+                directives has been deprecated in Angular v6 and will be removed in a future version of Angular
+                <input class="form-control form-control-sm" type="text" formControlName="idProv" [(ngModel)]="prov.idproveedor"
+                <input class="form-control form-control-sm" type="text" formControlName="idProv" autofocus>
                     [ngClass]="{ 'is-invalid': submitted && f.idProv.errors }">
                 <div *ngIf="submitted && f.idProv.errors" class="invalid-feedback">
                     <div *ngIf="f.idProv.errors.required">El campo es obligatorio</div>
                 </div>
-            </div>
+            </div>-->
 
             <!--Tipo proveedor field-->
             <div class="form-group">
@@ -26,10 +36,10 @@
                 <!--ngModel on the same form field as formControlName
                 directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
                 <!--<select class="form-select form-select-sm" formControlName="idtipoProv" [(ngModel)]="prov.tipoProveedor.idtipoProveedor"-->
-                    <select class="form-select form-select-sm" formControlName="idtipoProv"
+                    <select class="form-select form-select-sm" formControlName="idtipoProv" autofocus
                     [ngClass]="{ 'is-invalid': submitted && f.idtipoProv.errors }">
                     <option value="1">Hotel</option>
-                    <option value="2">Cabaña</option>
+                    <option value="2">Hotel</option>
                     <option value="3">Apartamento</option>
                 </select>
                 <div *ngIf="submitted && f.idtipoProv.errors" class="invalid-feedback">

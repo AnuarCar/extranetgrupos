@@ -11,11 +11,14 @@ import { HttpClient } from '@angular/common/http';
 export class ProveedorService {
 
 
-
   constructor(private httpObj: HttpClient) { }
 
   public registrarProveedor(prov: Proveedor):Observable<any> {
     return this.httpObj.post<any>("https://inventarioextranet.herokuapp.com/proveedores",prov);
+  }
+
+  public ObtenerProveedores():Observable<Proveedor[]>{
+    return this.httpObj.get<Proveedor[]>("https://inventarioextranet.herokuapp.com/proveedores/");
   }
 
 }
