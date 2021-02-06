@@ -18,7 +18,7 @@ export class ProveedoresComponent implements OnInit {
   prov:Proveedor;
   submitted = false;
   msg_error = false;
-  tipo_proveedor:Tipoproveedor[];
+  tipoProveedor:Tipoproveedor[];
 
 
   constructor(private provedorServ : ProveedorService, private _router : Router, private formBuilder: FormBuilder) { 
@@ -28,14 +28,14 @@ export class ProveedoresComponent implements OnInit {
 
   ngOnInit(): void {
   
-    //Cargar información de tipo proveedor para registro de contratos
-    //this.provedorServ.ObtenertipoProveedor().subscribe(res => {
-    //  this.tipo_proveedor = res;
-    //},
-    //  error => {
-    //    console.log("error al cargar");
-    //  }
-    //)
+    //Cargar información de tipo proveedor
+    this.provedorServ.ObtenerTipoProveedor().subscribe(res => {
+      this.tipoProveedor = res;
+    },
+      error => {
+        console.log("error al cargar tipo de proveedor");
+      }
+    )
 
     this.ProveedorForm = this.formBuilder.group({
       //idProv:['', Validators.required],

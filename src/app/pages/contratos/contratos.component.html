@@ -11,7 +11,7 @@
             <!--Name provider field-->
             <!--usar para búsqueda inteligente del registro de contratos-->
             <div>
-                <label class="form-label">ID proveedor - Nombre proveedor</label><b><label class="text-danger">&nbsp;*</label></b>
+                <label class="form-label">ID proveedor o Nombre proveedor</label><b><label class="text-danger">&nbsp;*</label></b>
                 <input class="form-select form-select-sm" type="search" list="listaproveedores" formControlName="proveedor" autofocus
                 [ngClass]="{ 'is-invalid': submitted && f.proveedor.errors }">
                 <div *ngIf="submitted && f.proveedor.errors" class="invalid-feedback">
@@ -35,14 +35,13 @@
 
             <!--Tipo negociación field-->
             <div class="form-group">
-                <label class="form-label">Tipo de negciación</label><b><label class="text-danger">&nbsp;*</label></b>
+                <label class="form-label">Tipo de negociación</label><b><label class="text-danger">&nbsp;*</label></b>
                 <!--ngModel on the same form field as formControlName
                 directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
                 <!--<select class="form-select form-select-sm" formControlName="idtipoProv" [(ngModel)]="prov.tipoProveedor.idtipoProveedor"-->
                     <select class="form-select form-select-sm" formControlName="tipoNegociacion"
                     [ngClass]="{ 'is-invalid': submitted && f.tipoNegociacion.errors }">
-                    <option value="1">Comisionable</option>
-                    <option value="2">Neta</option>
+                    <option *ngFor="let item of negociacion" [value]="item.idtipoNegociacion">{{item.nombreTipoNegociacion}}</option>
                 </select>
                 <div *ngIf="submitted && f.tipoNegociacion.errors" class="invalid-feedback">
                     <div *ngIf="f.tipoNegociacion.errors.required">El campo es obligatorio</div>
@@ -55,7 +54,7 @@
                 <!--ngModel on the same form field as formControlName
                 directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
                 <!--<input class="form-control form-control-sm" type="text" formControlName="cadenaProv" [(ngModel)]="prov.cadena">-->
-                <input class="form-control form-control-sm" type="text" formControlName="prctComision"
+                <input class="form-control form-control-sm" type="number" formControlName="prctComision"
                 [ngClass]="{ 'is-invalid': submitted && f.prctComision.errors }">
                 <div *ngIf="submitted && f.prctComision.errors" class="invalid-feedback">
                     <div *ngIf="f.prctComision.errors.required">El campo es obligatorio</div>

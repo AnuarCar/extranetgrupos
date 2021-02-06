@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Contrato } from '../model/Contrato';
+import { Negociacion } from '../model/Negociacion';
 import { Observable , ObservableInput } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
@@ -7,15 +7,16 @@ import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class ContratoService {
+export class NegociacionService {
 
   API_URL = environment.apiAuthUrl;
-  URL_SERVICE_CONTRATO_REGISTER = '/contrato/';
+  URL_SERVICE_TIPO_NEG_LIST = '/tiponegociacion/';
 
   constructor(private httpObj: HttpClient) { }
 
-public registrarContrato(contra: Contrato):Observable<any> {
-  return this.httpObj.post<any>(`${this.API_URL}` +  `${this.URL_SERVICE_CONTRATO_REGISTER}`,contra);
-}
+
+  public ObtenerProveedores():Observable<Negociacion[]>{ 
+    return this.httpObj.get<Negociacion[]>(`${this.API_URL}` + `${this.URL_SERVICE_TIPO_NEG_LIST}`);
+  }
 
 }

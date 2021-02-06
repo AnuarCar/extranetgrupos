@@ -19,6 +19,7 @@ import { ProveedorService } from './service/proveedor.service';
 import { FormDirective } from './constant/form.directive';
 import { MainProveedoresComponent } from './pages/proveedores/main-proveedores.component';
 import { ContratosComponent } from './pages/contratos/contratos.component';
+import { MainContratosComponent } from './pages/contratos/main-contratos.component';
 
 
 registerLocaleData(es);
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'preferencias', component: PreferenciasComponent },
   { path: 'main-proveedores', component:MainProveedoresComponent },
   { path: 'proveedores', component: ProveedoresComponent },
+  { path: 'main-contratos', component:MainContratosComponent},  
   { path: 'contratos', component: ContratosComponent },
   { path: '', component: PreferenciasComponent, pathMatch: 'full' },
 
@@ -43,7 +45,8 @@ const routes: Routes = [
     ProveedoresComponent,
     FormDirective,
     MainProveedoresComponent,
-    ContratosComponent
+    ContratosComponent,
+    MainContratosComponent
   ],
   imports: [
     BrowserModule,

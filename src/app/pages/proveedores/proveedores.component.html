@@ -38,9 +38,7 @@
                 <!--<select class="form-select form-select-sm" formControlName="idtipoProv" [(ngModel)]="prov.tipoProveedor.idtipoProveedor"-->
                     <select class="form-select form-select-sm" formControlName="idtipoProv" autofocus
                     [ngClass]="{ 'is-invalid': submitted && f.idtipoProv.errors }">
-                    <option value="1">Hotel</option>
-                    <option value="2">Hotel</option>
-                    <option value="3">Apartamento</option>
+                    <option *ngFor="let item of tipoProveedor" [value]="item.idtipoProveedor">{{item.nombreTipoProveedor}}</option>
                 </select>
                 <div *ngIf="submitted && f.idtipoProv.errors" class="invalid-feedback">
                     <div *ngIf="f.idtipoProv.errors.required">El campo es obligatorio</div>

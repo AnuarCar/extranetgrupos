@@ -5,7 +5,9 @@ import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Proveedor } from 'src/app/model/Proveedor';
+import { Negociacion } from 'src/app/model/Negociacion';
 import { ProveedorService } from 'src/app/service/proveedor.service';
+import { NegociacionService } from 'src/app/service/negociacion.service';
 
 @Component({
   selector: 'app-contratos',
@@ -20,24 +22,35 @@ export class ContratosComponent implements OnInit {
   submitted = false;
   msg_error = false;
   proveedor:Proveedor[];
+  negociacion:Negociacion[];
 
 
 
-  constructor(private contratoServ : ContratoService, private _router: Router, private formBuilder: FormBuilder, private proveServ : ProveedorService) {
+  constructor(private contratoServ : ContratoService, private _router: Router, private formBuilder: FormBuilder, private proveServ : ProveedorService, private negoServ: NegociacionService) {
    }
 
    get f() { return this.ContratoForm.controls; } 
 
   ngOnInit(): void {
 
-    //Cargar información de tipo proveedor para registro de contratos
+    //Cargar información de proveedores para registro de contratos
       this.proveServ.ObtenerProveedores().subscribe(res => {
       this.proveedor = res;
     },
       error => {
-        console.log("error al cargar");
+        console.log("error al cargar todos los proveedores");
       }
     )
+
+    //Cargar información de tipo de negociación
+      this.negoServ.ObtenerProveedores().subscribe(res => {
+        this.negociacion = res;
+      },
+      erro => {
+        console.log("error al cargar negociacion")
+      }
+    )
+
 
     this.ContratoForm = this.formBuilder.group({
       tipoNegociacion:['', Validators.required],
@@ -70,7 +83,7 @@ export class ContratosComponent implements OnInit {
     this.contratoServ.registrarContrato(this.contra).subscribe(
       data =>{
         console.log("Recibido")
-        this._router.navigate(['/main-proveedores']);
+        this._router.navigate(['/main-contratos']);
       },
       erro => {
         this.loading = false;
