@@ -1,4 +1,4 @@
 export const environment = {
-  production: false,
+  production: true,
   apiAuthUrl: 'https://inventarioextranet.herokuapp.com'
 };
