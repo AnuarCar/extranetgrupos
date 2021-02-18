@@ -25,7 +25,6 @@ export class ContratosComponent implements OnInit {
   negociacion:Negociacion[];
 
 
-
   constructor(private contratoServ : ContratoService, private _router: Router, private formBuilder: FormBuilder, private proveServ : ProveedorService, private negoServ: NegociacionService) {
    }
 

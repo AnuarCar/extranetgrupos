@@ -20,6 +20,8 @@ import { FormDirective } from './constant/form.directive';
 import { MainProveedoresComponent } from './pages/proveedores/main-proveedores.component';
 import { ContratosComponent } from './pages/contratos/contratos.component';
 import { MainContratosComponent } from './pages/contratos/main-contratos.component';
+import { MainHabitacionesComponent } from './pages/habitaciones/main-habitaciones.component';
+import { HabitacionesComponent } from './pages/habitaciones/habitaciones.component';
 
 
 registerLocaleData(es);
@@ -30,6 +32,8 @@ const routes: Routes = [
   { path: 'proveedores', component: ProveedoresComponent },
   { path: 'main-contratos', component:MainContratosComponent},  
   { path: 'contratos', component: ContratosComponent },
+  { path: 'main-habitaciones', component:MainHabitacionesComponent },
+  { path: 'habitaciones', component:HabitacionesComponent },
   { path: '', component: PreferenciasComponent, pathMatch: 'full' },
 
   //El '/' se puede camboas por el nombre de la carpeta, por ejemplo para re-dirigir a una pagina 404
@@ -46,7 +50,9 @@ const routes: Routes = [
     FormDirective,
     MainProveedoresComponent,
     ContratosComponent,
-    MainContratosComponent
+    MainContratosComponent,
+    MainHabitacionesComponent,
+    HabitacionesComponent
   ],
   imports: [
     BrowserModule,
