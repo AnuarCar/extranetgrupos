@@ -42,7 +42,7 @@ export class HabitacionesComponent implements OnInit {
 
 
     //Cargar información de tipo de habitacion
-     this.habServ.Obtenerhabitaciones().subscribe(res => {
+     this.habServ.ObtenerTipo_habitaciones().subscribe(res => {
      this.tipoHabitacion = res;
   
 
@@ -51,7 +51,7 @@ export class HabitacionesComponent implements OnInit {
         console.log("error al cargar negociacion")
     }
   )
-
+ 
     this.HabitacionForm = this.formBuilder.group({
       tipo_Habitacion:['', Validators.required],
       proveedor:['', Validators.required],
@@ -61,8 +61,11 @@ export class HabitacionesComponent implements OnInit {
       numeroNinos:['', Validators.required],
     })
 
+    
+
+
     this.hab = new Habitacion();
-    this.hab.tipoHabitacion = {};
+    //this.hab.tipoHabitacion = {};
     this.hab.proveedor = {};
 
 
@@ -76,7 +79,7 @@ export class HabitacionesComponent implements OnInit {
 
     this.loading = true;
     debugger
-    this.hab.tipoHabitacion.idtipoHabitacion=this.f.tipo_Habitacion.value;
+    this.hab.idtipoHabitacion=this.f.tipo_Habitacion.value;
     //this.hab.proveedor.idproveedor=this.f.proveedor.value;
     //Asignar valor 'id_proveedor' al servicio.
     this.habServ.idProveedor=this.f.proveedor.value;

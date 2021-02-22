@@ -1,0 +1,87 @@
+<div>
+    <b><h5 class="textual">Edición de habitación</h5></b><br>  
+
+    <div class="container" style="max-width: 650px;">
+      
+        <b><h6 class="textual">Información básica</h6></b>
+        
+        <!--Form creation-->
+        <form [formGroup]="HabitacionEditForm" (ngSubmit)="onSubmit()">
+                     
+            <!--Name provider field-->
+            <!--usar para referencia. Saber a que proveedor pertene la habitación-->
+            <div>
+                <label class="form-label">ID proveedor o Nombre proveedor</label><b><label class="text-danger">&nbsp;*</label></b>
+                <input class="form-select form-select-sm" type="search" formControlName="proveedor" disabled>
+            </div>
+
+            <!--Tipo habitación field-->
+            <div class="form-group">
+                <label class="form-label">Tipo de habitación</label><b><label class="text-danger">&nbsp;*</label></b>
+                <select class="form-select form-select-sm" formControlName="tipo_Habitacion">
+                    <option *ngFor="let item of tipoHabitacion" [value]="item.idtipoHabitacion">{{item.nombreTipoHabitacion}}</option>
+                </select>
+            </div>
+
+              <!--Capacidad máxima field-->
+            <div>
+                <label class="form-label">Capacidad Máxima</label>
+                <input class="form-control form-control-sm" type="text" formControlName="capacidadMaxima"
+                [ngClass]="{ 'is-invalid': submitted && f.capacidadMaxima.errors }">
+                <div *ngIf="submitted && f.capacidadMaxima.errors" class="invalid-feedback">
+                    <div *ngIf="f.capacidadMaxima.errors.required">El campo es obligatorio</div>
+                </div>
+            </div>
+
+
+            <!--Capacidad mínima field-->
+            <div>
+                <label class="form-label">Capacidad Mínima</label>
+                <input class="form-control form-control-sm" type="number" formControlName="capacidadMinima"
+                [ngClass]="{ 'is-invalid': submitted && f.capacidadMinima.errors }">
+                <div *ngIf="submitted && f.capacidadMinima.errors" class="invalid-feedback">
+                    <div *ngIf="f.capacidadMinima.errors.required">El campo es obligatorio</div>
+                </div>
+            </div>
+
+             <!--Número de adultos permitidos-->
+             <div>
+                <label class="form-label">Número de adultos permitidos</label>
+                <input class="form-control form-control-sm" type="number" formControlName="numeroAdultos"
+                [ngClass]="{ 'is-invalid': submitted && f.numeroAdultos.errors }">
+                <div *ngIf="submitted && f.numeroAdultos.errors" class="invalid-feedback">
+                    <div *ngIf="f.numeroAdultos.errors.required">El campo es obligatorio</div>
+                </div>
+            </div>
+
+             <!--Número de niños permitidos-->
+             <div>
+                <label class="form-label">Número de niños permitidos</label>
+                <input class="form-control form-control-sm" type="number" formControlName="numeroNinos"
+                [ngClass]="{ 'is-invalid': submitted && f.numeroNinos.errors }">
+                <div *ngIf="submitted && f.numeroNinos.errors" class="invalid-feedback">
+                    <div *ngIf="f.numeroNinos.errors.required">El campo es obligatorio</div>
+                </div>
+            </div>
+
+            <br>
+            <!--Submit button and loding button in case-->
+            <div *ngIf="loading; else elseBlock">
+                <center><button class="btn btn-primary" type="button">
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                Cargando...
+                </button></center>
+            </div>
+            <ng-template #elseBlock>
+                <center>
+                    <button (click)="onSubmit(habUpdate)" class ="btn btn-primary" type="submit">Actualizar</button>
+                </center>
+            </ng-template>
+            <!--Error alert-->
+            <br>
+            <div *ngIf="msg_error" class="alert alert-danger" role="alert">
+                ¡Error conectando con el servicio!
+            </div>
+        </form>
+    </div>
+</div>

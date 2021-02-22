@@ -17,11 +17,13 @@ import { PreferenciasComponent } from './pages/preferencias/preferencias.compone
 import { ProveedoresComponent } from './pages/proveedores/proveedores.component';
 import { ProveedorService } from './service/proveedor.service';
 import { FormDirective } from './constant/form.directive';
+import { DataTablesModule } from "angular-datatables";
 import { MainProveedoresComponent } from './pages/proveedores/main-proveedores.component';
 import { ContratosComponent } from './pages/contratos/contratos.component';
 import { MainContratosComponent } from './pages/contratos/main-contratos.component';
 import { MainHabitacionesComponent } from './pages/habitaciones/main-habitaciones.component';
 import { HabitacionesComponent } from './pages/habitaciones/habitaciones.component';
+import { HabitacionesEditComponent } from './pages/habitaciones/habitaciones-edit/habitaciones-edit.component';
 
 
 registerLocaleData(es);
@@ -34,6 +36,7 @@ const routes: Routes = [
   { path: 'contratos', component: ContratosComponent },
   { path: 'main-habitaciones', component:MainHabitacionesComponent },
   { path: 'habitaciones', component:HabitacionesComponent },
+  { path: 'habitaciones-edit', component:HabitacionesEditComponent },
   { path: '', component: PreferenciasComponent, pathMatch: 'full' },
 
   //El '/' se puede camboas por el nombre de la carpeta, por ejemplo para re-dirigir a una pagina 404
@@ -52,7 +55,8 @@ const routes: Routes = [
     ContratosComponent,
     MainContratosComponent,
     MainHabitacionesComponent,
-    HabitacionesComponent
+    HabitacionesComponent,
+    HabitacionesEditComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +68,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    DataTablesModule,
     RouterModule.forRoot(routes)
   ],
   providers: [

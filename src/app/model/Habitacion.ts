@@ -1,10 +1,10 @@
 export class Habitacion {
-    tipoHabitacion:{
-        idtipoHabitacion?:Number;
-    }
+    idhabitacion?:any;
+    idtipoHabitacion?:Number;
     proveedor:{
         idproveedor?:Number;
     }
+    nombreProveedor?:String;
     capacidadMaxima:Number;
     capacidadMinima:Number;
     numeroAdultos:Number;
