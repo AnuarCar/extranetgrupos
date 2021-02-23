@@ -15,6 +15,7 @@ export class HabitacionService {
   URL_SERVICE_HABITACION_REGISTER = '/habitacion/';
   URL_SERVICE_TIPO_HABITACION_LIST = '/tipohabitacion/';
   URL_SERVICE_HABITACION_PROVEEDOR = '/habitacion/provee/';
+  URL_SERVICE_HABITACION_PROVE_TIPO = '/habitacion/proveetipo/';
   idProveedor:Number;
 
   constructor(private httpObj: HttpClient) { }
@@ -33,6 +34,10 @@ export class HabitacionService {
 
   public ObtenerHabitacionId(id:Number){
     return this.httpObj.get<Habitacion>(`${this.API_URL}` +  `${this.URL_SERVICE_HABITACION_REGISTER}` + id);
+  }
+
+  public ObtenerHabitacionesProveedorTipo():Observable<Habitacion[]>{
+    return this.httpObj.get<Habitacion[]>(`${this.API_URL}` + `${this.URL_SERVICE_HABITACION_PROVE_TIPO}`);
   }
 
   public ObtenerProveedorporIdhabitacion(id:any):Observable<Proveedor[]>{

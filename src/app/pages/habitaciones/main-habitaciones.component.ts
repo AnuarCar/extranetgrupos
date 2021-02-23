@@ -42,7 +42,7 @@ export class MainHabitacionesComponent implements OnDestroy, OnInit {
 
     //Cargar información de habitaciones
     this.loading =true;
-    this.habServ.ObtenerHabitaciones().subscribe(res => {
+    this.habServ.ObtenerHabitacionesProveedorTipo().subscribe(res => {
     this.habitacion = res;
     this.dtTrigger.next();
     this.loading = false;

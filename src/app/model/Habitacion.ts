@@ -9,4 +9,7 @@ export class Habitacion {
     capacidadMinima:Number;
     numeroAdultos:Number;
     numeroNinos:Number;
+    nombreTipoHabitacion?:String;
+    idproveedor?:Number;
+    nombre:String
 }
