@@ -1,7 +1,7 @@
 export class Habitacion {
     idhabitacion?:any;
     idtipoHabitacion?:Number;
-    proveedor:{
+    proveedor?:{
         idproveedor?:Number;
     }
     nombreProveedor?:String;

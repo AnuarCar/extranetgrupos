@@ -39,8 +39,8 @@ export class HabitacionService {
     return this.httpObj.get<Proveedor[]>(`${this.API_URL}` +  `${this.URL_SERVICE_HABITACION_PROVEEDOR}` + id);
   }
 
-  public ActualizarHabitacion(habitacion: Habitacion){
-    return this.httpObj.put<Habitacion>(`${this.API_URL}` + `${this.URL_SERVICE_TIPO_HABITACION_LIST}`,habitacion);
+  public ActualizarHabitacion(habitacion: Habitacion):Observable<any>{
+    return this.httpObj.put<Habitacion>(`${this.API_URL}` + `${this.URL_SERVICE_HABITACION_REGISTER}`,habitacion);
   }
 
   //public ActualizarHabitacion(habitacion: Habitacion):Observable<any>{

@@ -48,7 +48,7 @@ export class HabitacionesEditComponent implements OnInit {
     //Creaci{on de FormBuilder
     this.HabitacionEditForm = this.formBuilder.group({
     tipo_Habitacion:[''],
-    proveedor:[''],
+    proveedor: {value: '', disabled: true},
     capacidadMaxima:['', Validators.required],
     capacidadMinima:[''],
     numeroAdultos:[''],

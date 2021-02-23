@@ -34,7 +34,7 @@ export class MainHabitacionesComponent implements OnDestroy, OnInit {
 
     this.dtOptions = {
       pagingType: 'full_numbers',
-      pageLength: 6,
+      pageLength: 5,
       language: {
         url: '//cdn.datatables.net/plug-ins/1.10.22/i18n/Spanish.json'
       }
