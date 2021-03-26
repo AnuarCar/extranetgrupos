@@ -1,0 +1,97 @@
+<div>
+    <b><h5 class="textual">Registro de Allotment</h5></b><br>  
+
+    <div class ="container"  style="max-width: 650px;">
+
+        <b><h6 class="textual">Información básica</h6></b>
+    <!--Form creation-->
+        <form focusInvalidInput [formGroup]="AllotmentForm" (ngSubmit)="onSubmit()">
+            <!--Name provider field-->
+            <!--usar para búsqueda inteligente del registro de allotment-->
+            <div>
+                <label class="form-label">ID proveedor o Nombre proveedor</label><b><label class="text-danger">&nbsp;*</label></b>
+                <input class="form-select form-select-sm" type="search" list="listaproveedores" formControlName="proveedorid"
+                [ngClass]="{ 'is-invalid': submitted && f.proveedorid.errors }">
+                <div *ngIf="submitted && f.proveedorid.errors" class="invalid-feedback">
+                    <div *ngIf="f.proveedorid.errors.required">El campo es obligatorio</div>
+                </div>
+                <datalist id="listaproveedores">
+                    <option *ngFor="let item of proveedor" [value]="item.idproveedor">{{item.nombre}}</option>
+                </datalist>
+            </div>
+
+            <!--ID field-->
+            <div>
+                <label class="form-label">ID Habitacion</label>
+                <!--ngModel on the same form field as formControlName
+                directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                <!--<input class="form-control form-control-sm" type="text" formControlName="cadenaProv" [(ngModel)]="prov.cadena">-->
+                <input class="form-control form-control-sm" type="number" formControlName="idhabitacion_prov"
+                [ngClass]="{ 'is-invalid': submitted && f.idhabitacion_prov.errors }">
+                <div *ngIf="submitted && f.idhabitacion_prov.errors" class="invalid-feedback">
+                    <div *ngIf="f.idhabitacion_prov.errors.required">El campo es obligatorio</div>
+                </div>
+            </div>
+
+
+              <!--% Cantidad field-->
+              <div>
+                <label class="form-label">Cantidad</label>
+                <!--ngModel on the same form field as formControlName
+                directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                <!--<input class="form-control form-control-sm" type="text" formControlName="cadenaProv" [(ngModel)]="prov.cadena">-->
+                <input class="form-control form-control-sm" type="number" formControlName="cantidad"
+                [ngClass]="{ 'is-invalid': submitted && f.cantidad.errors }">
+                <div *ngIf="submitted && f.cantidad.errors" class="invalid-feedback">
+                    <div *ngIf="f.cantidad.errors.required">El campo es obligatorio</div>
+                </div>
+            </div>
+
+              <!--% FechaDesde field-->
+            <div>
+                <label class="form-label">Fecha Desde</label>
+                <!--ngModel on the same form field as formControlName
+                directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                <!--<input class="form-control form-control-sm" type="text" formControlName="cadenaProv" [(ngModel)]="prov.cadena">-->
+                <input class="form-control form-control-sm" type="date" formControlName="fechadesde"
+                [ngClass]="{ 'is-invalid': submitted && f.fechadesde.errors }">
+                <div *ngIf="submitted && f.fechadesde.errors" class="invalid-feedback">
+                    <div *ngIf="f.fechadesde.errors.required">El campo es obligatorio</div>
+                </div>
+            </div>
+
+            <!--% FechaHasta field-->
+            <div>
+                <label class="form-label">Fecha Hasta</label>
+                <!--ngModel on the same form field as formControlName
+                directives has been deprecated in Angular v6 and will be removed in a future version of Angular-->
+                <!--<input class="form-control form-control-sm" type="text" formControlName="cadenaProv" [(ngModel)]="prov.cadena">-->
+                <input class="form-control form-control-sm" type="date" formControlName="fechahasta"
+                [ngClass]="{ 'is-invalid': submitted && f.fechahasta.errors }">
+                <div *ngIf="submitted && f.fechahasta.errors" class="invalid-feedback">
+                    <div *ngIf="f.fechahasta.errors.required">El campo es obligatorio</div>
+                </div>
+            </div>
+
+            <br>
+            <!--Submit button and loding button in case-->
+            <div *ngIf="loading; else elseBlock">
+                <center><button class="btn btn-primary" type="button">
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                Cargando...
+                </button></center>
+            </div>
+            <ng-template #elseBlock>
+                <center>
+                    <button class ="btn btn-primary" type="submit">Guardar</button>
+                </center>
+            </ng-template>
+            <!--Error alert-->
+            <br>
+            <div *ngIf="msg_error" class="alert alert-danger" role="alert">
+                ¡Error conectando con el servicio!
+            </div>
+
+        </form>
+    </div>
+</div>

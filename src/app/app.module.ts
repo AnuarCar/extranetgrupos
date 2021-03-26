@@ -24,6 +24,8 @@ import { MainContratosComponent } from './pages/contratos/main-contratos.compone
 import { MainHabitacionesComponent } from './pages/habitaciones/main-habitaciones.component';
 import { HabitacionesComponent } from './pages/habitaciones/habitaciones.component';
 import { HabitacionesEditComponent } from './pages/habitaciones/habitaciones-edit/habitaciones-edit.component';
+import { AllotmentComponent } from './pages/allotment/allotment.component';
+import { MainAllotmentComponent } from './pages/allotment/main-allotment.component';
 
 
 registerLocaleData(es);
@@ -37,6 +39,8 @@ const routes: Routes = [
   { path: 'main-habitaciones', component:MainHabitacionesComponent },
   { path: 'habitaciones', component:HabitacionesComponent },
   { path: 'habitaciones-edit', component:HabitacionesEditComponent },
+  { path: 'allotment', component: AllotmentComponent },
+  { path: 'main-allotment', component: MainAllotmentComponent },
   { path: '', component: PreferenciasComponent, pathMatch: 'full' },
 
   //El '/' se puede camboas por el nombre de la carpeta, por ejemplo para re-dirigir a una pagina 404
@@ -56,7 +60,9 @@ const routes: Routes = [
     MainContratosComponent,
     MainHabitacionesComponent,
     HabitacionesComponent,
-    HabitacionesEditComponent
+    HabitacionesEditComponent,
+    AllotmentComponent,
+    MainAllotmentComponent
   ],
   imports: [
     BrowserModule,
